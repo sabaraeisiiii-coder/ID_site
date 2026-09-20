@@ -27,3 +27,7 @@ The original `apps/api`, `apps/gateway`, `prisma`, compose infrastructure, `.env
 The original PNG source images are not included because screens reference the lean WebP equivalents, which *are* included in each app. The design assets and pages have been copied, but runtime tests and full browser QA remain to be run in an environment with Node.js / network access. Backend-only dependencies inherited from the source have been removed from both app manifests.
 
 **Visibility:** `ID_site` is currently a public repository, unlike its private source. Switch to Private in GitHub settings if its UI source and graphics are not intended to be public.
+
+## Lint note
+
+The original UI had several `react-hooks/set-state-in-effect` findings in eight storefront files. Those specific copied components are flagged as warnings (not hidden) rather than changing their interactions during extraction. New components and other files retain the original lint rules. The dashboard's three findings were corrected in the copy. These warnings can be refactored and removed separately after UI regression testing.
