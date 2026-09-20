@@ -1,0 +1,253 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is([data-mode="dark"] *));
+
+/* ==========================================================================
+   Tailwind theme mapping — consumes our CSS variables everywhere.
+   Components never hard-code colors; they read tokens.
+   ========================================================================== */
+@theme inline {
+  --color-background: var(--background);
+  --color-background-subtle: var(--background-subtle);
+  --color-foreground: var(--foreground);
+  --color-foreground-secondary: var(--foreground-secondary);
+  --color-foreground-tertiary: var(--foreground-tertiary);
+  --color-foreground-disabled: var(--foreground-disabled);
+
+  --color-surface: var(--surface);
+  --color-surface-secondary: var(--surface-secondary);
+  --color-surface-tertiary: var(--surface-tertiary);
+
+  --color-border: var(--border);
+  --color-border-hover: var(--border-hover);
+  --color-border-strong: var(--border-strong);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-active: var(--primary-active);
+  --color-primary-foreground: var(--primary-foreground);
+
+  /* Functional */
+  --color-success: var(--color-success-500);
+  --color-success-foreground: var(--color-success-700);
+  --color-success-soft: var(--color-success-50);
+  --color-warning: var(--color-warning-500);
+  --color-warning-foreground: var(--color-warning-700);
+  --color-warning-soft: var(--color-warning-50);
+  --color-error: var(--color-error-500);
+  --color-error-foreground: var(--color-error-700);
+  --color-error-soft: var(--color-error-50);
+  --color-info: var(--color-info-500);
+  --color-info-foreground: var(--color-info-700);
+  --color-info-soft: var(--color-info-50);
+
+  /* Commerce */
+  --color-price-current: var(--price-current);
+  --color-price-old: var(--price-old);
+  --color-discount-bg: var(--discount-bg);
+  --color-discount-text: var(--discount-text);
+  --color-stock-in-bg: var(--stock-in-bg);
+  --color-stock-in-text: var(--stock-in-text);
+  --color-stock-low-bg: var(--stock-low-bg);
+  --color-stock-low-text: var(--stock-low-text);
+  --color-stock-out-bg: var(--stock-out-bg);
+  --color-stock-out-text: var(--stock-out-text);
+
+  /* Fonts */
+  --font-sans: var(--font-sans);
+  --font-latin: var(--font-latin);
+  --font-mono: var(--font-mono);
+
+  /* Radius */
+  --radius-xs: var(--radius-xs);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-2xl: var(--radius-2xl);
+  --radius-3xl: var(--radius-3xl);
+
+  /* Shadows */
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+
+  /* shadcn compatibility aliases */
+  --color-card: var(--surface);
+  --color-card-foreground: var(--foreground);
+  --color-popover: var(--surface);
+  --color-popover-foreground: var(--foreground);
+  --color-secondary: var(--surface-secondary);
+  --color-secondary-foreground: var(--foreground);
+  --color-muted: var(--surface-secondary);
+  --color-muted-foreground: var(--foreground-secondary);
+  --color-accent: var(--surface-secondary);
+  --color-accent-foreground: var(--foreground);
+  --color-destructive: var(--color-error-500);
+  --color-input: var(--border);
+  --color-ring: var(--primary);
+  --color-sidebar: var(--surface);
+  --color-sidebar-foreground: var(--foreground);
+  --color-sidebar-primary: var(--primary);
+  --color-sidebar-primary-foreground: var(--primary-foreground);
+  --color-sidebar-accent: var(--surface-secondary);
+  --color-sidebar-accent-foreground: var(--foreground);
+  --color-sidebar-border: var(--border);
+  --color-sidebar-ring: var(--primary);
+
+  --radius: var(--radius-md);
+}
+
+/* ==========================================================================
+   Base layer
+   ========================================================================== */
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    color-scheme: light;
+  }
+
+  [data-mode="dark"] { color-scheme: dark; }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-size: var(--text-md);
+    line-height: var(--leading-normal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+    letter-spacing: -0.01em;
+    color: var(--foreground);
+  }
+
+  ::selection {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-xs);
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-strong);
+    border-radius: var(--radius-full);
+    border: 2px solid var(--background);
+  }
+  ::-webkit-scrollbar-thumb:hover { background: var(--foreground-tertiary); }
+
+  [dir="rtl"] { direction: rtl; }
+  [dir="ltr"] { direction: ltr; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  @media (prefers-contrast: more) {
+    :focus-visible { outline-width: 3px; }
+    * { border-color: var(--border-strong); }
+  }
+}
+
+/* ==========================================================================
+   Utilities — semantic helpers consumed by commerce + admin components
+   ========================================================================== */
+@layer utilities {
+  .surface-card {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+  }
+  .surface-subtle {
+    background-color: var(--surface-secondary);
+    border-radius: var(--radius-lg);
+  }
+  .text-price {
+    font-family: var(--font-latin);
+    font-weight: var(--font-bold);
+    color: var(--price-current);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+  }
+  .text-price-old {
+    font-family: var(--font-latin);
+    color: var(--price-old);
+    text-decoration: line-through;
+    font-variant-numeric: tabular-nums;
+  }
+  .nums-latin { font-family: var(--font-latin); font-variant-numeric: tabular-nums; }
+  .nums-persian { font-feature-settings: "ss01"; }
+
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  .liquid-image-frame { --liquid-x: 50%; --liquid-y: 50%; position: relative; overflow: hidden; isolation: isolate; }
+  @media (hover: hover) and (pointer: fine) {
+    .liquid-image-frame::after {
+      content: ""; position: absolute; inset: -20%; pointer-events: none; z-index: 2; opacity: 0;
+      background: radial-gradient(circle 12rem at var(--liquid-x) var(--liquid-y), color-mix(in srgb, white 24%, transparent), transparent 52%);
+      mix-blend-mode: soft-light; transform: scale(.78); transition: opacity .35s var(--ease-out), transform .7s var(--ease-out);
+    }
+    .liquid-image-frame:hover::after { opacity: .9; transform: scale(1); }
+    .liquid-image-frame :is(img, picture) { transition: transform .7s var(--ease-out), filter .7s var(--ease-out); }
+    .liquid-image-frame:hover img { transform: scale(1.045); filter: saturate(1.05) contrast(1.02); }
+  }
+
+  .hero-enter { animation: hero-enter .7s var(--ease-out) both; }
+  .hero-enter-delayed { animation: hero-enter .8s .12s var(--ease-out) both; }
+  @keyframes hero-enter { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* Admin settings has mixed Persian and technical fields; keep structure RTL,
+     while individual technical values opt into LTR via their own `dir`. */
+  .settings-page, .settings-page :is(form, [role="tablist"], [role="tabpanel"]) { direction: rtl; text-align: start; }
+  .settings-page label, .settings-page h2, .settings-page p { text-align: start; }
+  .settings-page [role="tablist"] { justify-content: flex-start; }
+  .settings-page [role="tab"] { flex-direction: row; }
+  .settings-field-grid { direction: rtl; grid-auto-flow: row; }
+  .settings-field-grid > * { min-inline-size: 0; }
+  .settings-page [role="switch"] { flex: 0 0 auto; }
+  .settings-page input:not([dir="ltr"]), .settings-page textarea { text-align: start; }
+
+  @media (min-width: 1024px) {
+    .product-filter-sticky { position: sticky; align-self: start; }
+  }
+
+  .skeleton-shimmer {
+    background: linear-gradient(90deg,
+      var(--surface-secondary) 0%,
+      var(--surface-tertiary) 50%,
+      var(--surface-secondary) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.6s ease-in-out infinite;
+  }
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+}
