@@ -41,9 +41,7 @@ export function ContentForm({ initialValues, isEdit = false }: ContentFormProps)
     initialValues?.status ?? "draft",
   );
 
-  React.useEffect(() => {
-    if (!slugTouched) setSlug(slugify(title));
-  }, [title, slugTouched]);
+  const displayedSlug = slugTouched ? slug : slugify(title);
 
   const paragraphs = React.useMemo(() => body.split(/\n\n+/), [body]);
 
@@ -94,7 +92,7 @@ export function ContentForm({ initialValues, isEdit = false }: ContentFormProps)
                   className="text-xs font-mono text-foreground break-all"
                   dir="ltr"
                 >
-                  /pages/{slug || "—"}
+                  /pages/{displayedSlug || "—"}
                 </dd>
               </div>
               <div className="pt-2 border-t border-border">
@@ -125,7 +123,7 @@ export function ContentForm({ initialValues, isEdit = false }: ContentFormProps)
             <Label htmlFor="content-slug">شناسه URL (slug)</Label>
             <Input
               id="content-slug"
-              value={slug}
+              value={displayedSlug}
               onChange={(e) => {
                 setSlug(e.target.value);
                 setSlugTouched(true);
