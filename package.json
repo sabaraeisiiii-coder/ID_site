@@ -1,0 +1,11 @@
+{
+  "name": "id-site-ui",
+  "private": true,
+  "packageManager": "pnpm@10.17.1",
+  "scripts": {
+    "dev": "pnpm --dir apps/client dev",
+    "build": "pnpm --dir apps/client build",
+    "lint": "pnpm --dir apps/client lint",
+    "typecheck": "pnpm --dir apps/client typecheck"
+  }
+}
