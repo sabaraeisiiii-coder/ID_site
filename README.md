@@ -1,23 +1,29 @@
-# ID_site — Frontend UI copy
+# ID_site — Independent frontend UI starter
 
-Source: private `z.ai_project` repository, customer-facing Next.js app (`apps/client`).
+UI-only working copy extracted from `z.ai_project` (source is private). This destination includes a storefront (`apps/client`) and admin dashboard (`apps/dashboard`) as separate Next.js apps, their pages, UI components, shared visual design tokens, RTL Persian styles, and local mock data required to render screens. The source repo was not modified.
 
-## Scope
-This destination contains a copied frontend source tree, UI components, design tokens, page layouts and mock-backed UI domain files. The original repository was not modified. API, Gateway, database infrastructure and credentials were not copied. This is a starting copy, **not yet a tested, fully UI-only standalone deliverable**.
+## Requirements
 
-## Run (Windows / PowerShell)
+Node.js 22+ with Corepack and pnpm 10.17.1.
+
+## Run on Windows (PowerShell)
+
 ```powershell
+git clone https://github.com/sabaraeisiiii-coder/ID_site.git
+cd ID_site
 corepack enable
-pnpm install
-pnpm dev
+pnpm install --no-frozen-lockfile
+pnpm dev:store  # http://localhost:3201
 ```
-Frontend is configured for http://localhost:3201.
 
-## Known gaps
-- The source repository is private while this destination is public: review visibility before adding any further private files.
-- Product and hero WebP/PNG assets are NOT copied; GitHub connector cannot decode the source binary assets. Some images will be missing until those files are transferred.
-- API/payment/account domain mock and interaction logic are still present where necessary for rendering the copied pages. It has not been refactored to strictly visual-only components.
-- The source was copied without running install, lint, typecheck, build, or browser QA in this destination.
-- The previous storefront package manifest still lists legacy dependencies; clean them up after validating actual imports.
+Open a second terminal in the same folder and run `pnpm dev:admin` for the admin UI at http://localhost:3101. Or run `pnpm dev:all` for both.
 
-No code in the private source repo was changed.
+Validation: `pnpm typecheck`, `pnpm lint`, `pnpm build`.
+
+## What is intentionally not copied
+
+The original `apps/api`, `apps/gateway`, `prisma`, compose infrastructure, `.env` files, and `src/lib/db.ts` are excluded. No real backend, payments, or authentication are provided; UI pages still include their original local demo/mock interactions and mock domain stores. They do not represent a real online shop.
+
+The original PNG source images are not included because screens reference the lean WebP equivalents, which *are* included in each app. The design assets and pages have been copied, but runtime tests and full browser QA remain to be run in an environment with Node.js / network access. Existing package manifests may include unused legacy dependencies pending a verified dependency cleanup.
+
+**Visibility:** `ID_site` is currently a public repository, unlike its private source. Switch to Private in GitHub settings if its UI source and graphics are not intended to be public.

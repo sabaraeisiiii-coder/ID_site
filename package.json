@@ -3,9 +3,12 @@
   "private": true,
   "packageManager": "pnpm@10.17.1",
   "scripts": {
-    "dev": "pnpm --dir apps/client dev",
-    "build": "pnpm --dir apps/client build",
-    "lint": "pnpm --dir apps/client lint",
-    "typecheck": "pnpm --dir apps/client typecheck"
+    "dev": "pnpm --filter @zai/client dev",
+    "dev:store": "pnpm --filter @zai/client dev",
+    "dev:admin": "pnpm --filter @zai/dashboard dev",
+    "dev:all": "pnpm -r --parallel --filter @zai/client --filter @zai/dashboard dev",
+    "build": "pnpm -r --filter @zai/client --filter @zai/dashboard build",
+    "lint": "pnpm -r --filter @zai/client --filter @zai/dashboard lint",
+    "typecheck": "pnpm -r --filter @zai/client --filter @zai/dashboard typecheck"
   }
 }
