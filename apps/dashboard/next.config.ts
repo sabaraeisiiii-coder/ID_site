@@ -9,7 +9,6 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "plus.unsplash.com" },
     ],
   },
-  allowedDevOrigins: ["*.space-z.ai", "*.chatglm.cn"],
 };
 
 export default nextConfig;
