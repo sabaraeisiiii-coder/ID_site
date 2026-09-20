@@ -77,7 +77,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
             </svg>
           </span>
           <div className="flex flex-col leading-tight">
-            <span className="text-sm font-bold">{siteConfig.name}</span>
+            <span className="flex flex-col text-sm font-bold leading-[0.82]" aria-label="ID site"><span>ID</span><span className="text-[0.72em] font-medium text-foreground-tertiary">site</span></span>
             <span className="text-[11px] text-foreground-tertiary">پنل مدیریت</span>
           </div>
         </div>
@@ -109,7 +109,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
                         stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
                     </svg>
                   </span>
-                  پنل مدیریت
+                  <span className="flex flex-col text-sm font-bold leading-[0.82]" aria-label="ID site"><span>ID</span><span className="text-[0.72em] font-medium text-foreground-tertiary">site</span></span>
                 </SheetTitle>
               </SheetHeader>
               <div className="overflow-y-auto h-[calc(100vh-72px)]">

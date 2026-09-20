@@ -54,7 +54,7 @@ export function StoreHeader() {
         <div className="flex items-center gap-4 lg:gap-6">
           <Link href="/" className="flex items-center gap-2 shrink-0" aria-label={siteConfig.name}>
             <Logo />
-            <span className="text-lg font-bold tracking-tight hidden sm:inline">{siteConfig.name}</span>
+            <BrandWordmark className="hidden sm:inline-flex" />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1" aria-label="منوی اصلی">
@@ -140,7 +140,7 @@ export function StoreHeader() {
               <SheetHeader className="px-5 pt-5 pb-3 border-b border-border">
                 <SheetTitle className="flex items-center gap-2">
                   <Logo />
-                  <span>{siteConfig.name}</span>
+                  <BrandWordmark />
                 </SheetTitle>
               </SheetHeader>
               <div className="overflow-y-auto h-[calc(100vh-72px)]">
@@ -224,4 +224,8 @@ function Logo() {
       </svg>
     </span>
   );
+}
+
+function BrandWordmark({ className = "" }: { className?: string }) {
+  return <span className={`flex flex-col leading-[0.82] font-bold tracking-tight ${className}`} aria-label="ID site"><span>ID</span><span className="text-[0.72em] font-medium text-foreground-secondary">site</span></span>;
 }

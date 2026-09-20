@@ -16,9 +16,9 @@ const vazirmatn = Vazirmatn({
 });
 
 export const metadata: Metadata = {
-  title: { default: "بازار — فروشگاه اینترنتی", template: "%s — بازار" },
+  title: { default: "ID site — اپل و پلی‌استیشن", template: "%s — ID site" },
   description:
-    "یک فروشگاه اینترنتی مدرن، مینیمال و حرفه‌ای. تجربه خرید روان، سریع و قابل اعتماد.",
+    "فروشگاه تخصصی محصولات اپل و پلی‌استیشن؛ داده‌های محصول در این نسخه نمایشی هستند.",
   icons: { icon: "/logo.svg" },
 };
 

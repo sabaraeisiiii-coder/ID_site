@@ -12,9 +12,9 @@ import { catalogService } from "@/domains/catalog/service";
 import { toPersianDigits } from "@/lib/format";
 
 export const metadata = {
-  title: "بازار — فروشگاه اینترنتی",
+  title: "ID site — اپل و پلی‌استیشن",
   description:
-    "یک فروشگاه اینترنتی مدرن، مینیمال و حرفه‌ای. تجربه خرید روان، سریع و قابل اعتماد.",
+    "فروشگاه تخصصی محصولات اپل و پلی‌استیشن؛ همهٔ اطلاعات این نسخه نمایشی هستند.",
 };
 
 export default async function HomePage() {
@@ -44,8 +44,8 @@ export default async function HomePage() {
         <Section spacing="lg">
           <SectionHeader
             eyebrow="دسته‌بندی‌ها"
-            title="خرید بر اساس دسته"
-            description="بهترین محصولات در هر دسته‌بندی، انتخاب‌شده برای شما."
+            title="خرید بر اساس خانوادهٔ محصول"
+            description="اپل، پلی‌استیشن و لوازم جانبی سازگار در یک کاتالوگ تخصصی."
             viewAllHref="/products"
           />
           <CategoryGrid categories={categories} />
@@ -57,8 +57,8 @@ export default async function HomePage() {
         <Section spacing="lg" className="bg-surface-secondary/40">
           <SectionHeader
             eyebrow="منتخب فروشگاه"
-            title="پرفروش‌ترین محصولات"
-            description="پرطرفدارترین کالاها از نگاه مشتریان ما."
+            title="محصولات منتخب اپل"
+            description="انتخاب‌های نمایشی از خانواده‌های اصلی اپل و PlayStation."
             viewAllHref="/products?sort=popular"
           />
           <ProductGrid products={featured} />
@@ -75,8 +75,8 @@ export default async function HomePage() {
         <Section spacing="lg" className="bg-surface-secondary/40">
           <SectionHeader
             eyebrow="تازه‌ها"
-            title="جدیدترین محصولات"
-            description="آخرین کالاهای اضافه‌شده به فروشگاه."
+            title="تازه‌های کاتالوگ"
+            description="مدل‌ها و خانواده‌های تازه‌افزوده‌شده به داده‌های نمایشی."
             viewAllHref="/products?sort=newest"
           />
           <ProductGrid products={newArrivals} />
@@ -206,8 +206,8 @@ function PromoBanner() {
         {/* Image side */}
         <div className="relative min-h-[260px] self-stretch overflow-hidden md:min-h-0">
           <Image
-            src="/images/showcase/hero-studio.webp"
-            alt="مجموعه لباس‌های پاییزه"
+            src="/images/products/gaming-console.png"
+            alt="کنسول بازی در چیدمان استودیویی"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover object-center"

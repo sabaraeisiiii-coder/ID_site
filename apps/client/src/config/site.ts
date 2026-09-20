@@ -1,11 +1,11 @@
 /** Site-wide identity & navigation. Change once → propagates. */
 
 export const siteConfig = {
-  name: "بازار",
-  nameLatin: "Bazaar",
-  tagline: "تجربه خرید مدرن",
-  description: "فروشگاه اینترنتی مدرن و مینیمال",
-  url: "https://bazaar.example.com",
+  name: "ID site",
+  nameLatin: "ID site",
+  tagline: "اپل و پلی‌استیشن، با انتخاب دقیق",
+  description: "فروشگاه تخصصی محصولات اپل و پلی‌استیشن",
+  url: "https://id-site.example.com",
   locale: "fa-IR",
   direction: "rtl" as const,
 
@@ -28,8 +28,8 @@ export const siteConfig = {
     main: [
       { label: "صفحه اصلی", href: "/" },
       { label: "محصولات", href: "/products" },
-      { label: "تخفیف‌ها", href: "/products?onSale=true" },
-      { label: "جدیدترین‌ها", href: "/products?sort=newest" },
+      { label: "محصولات اپل", href: "/products?categoryId=c1" },
+      { label: "پلی‌استیشن", href: "/products?categoryId=c6" },
       { label: "درباره ما", href: "/pages/about" },
     ],
     footer: [
@@ -43,7 +43,7 @@ export const siteConfig = {
         ],
       },
       {
-        title: "با بازار",
+        title: "با ID site",
         links: [
           { label: "درباره ما", href: "/pages/about" },
           { label: "قوانین و مقررات", href: "/pages/terms" },
