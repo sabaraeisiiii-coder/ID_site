@@ -9,6 +9,7 @@
     "dev:all": "pnpm -r --parallel --filter @zai/client --filter @zai/dashboard dev",
     "build": "pnpm -r --filter @zai/client --filter @zai/dashboard build",
     "lint": "pnpm -r --filter @zai/client --filter @zai/dashboard lint",
-    "typecheck": "pnpm -r --filter @zai/client --filter @zai/dashboard typecheck"
+    "typecheck": "pnpm -r --filter @zai/client --filter @zai/dashboard typecheck",
+    "validate:catalog": "node scripts/validate-catalog.cjs"
   }
 }

@@ -13,18 +13,28 @@ import { catalogService } from "@/domains/catalog/service";
 import { toPersianDigits } from "@/lib/format";
 
 export const metadata = {
-  title: "ID site — اپل و پلی‌استیشن",
+  title: "ID store — اپل و پلی‌استیشن",
   description:
     "فروشگاه تخصصی محصولات اپل و پلی‌استیشن؛ همهٔ اطلاعات این نسخه نمایشی هستند.",
 };
 
 export default async function HomePage() {
-  const [featured, categories] = await Promise.all([
-    catalogService.listFeatured(8),
+  const [catalog, categories] = await Promise.all([
+    catalogService.listProducts({ pageSize: 200 }),
     catalogService.listCategories(),
   ]);
-  const appleProducts = featured.filter((product) => product.categoryId !== "c6" && product.categoryId !== "c7").slice(0, 4);
-  const accessories = featured.filter((product) => product.categoryId === "c5" || product.categoryId === "c7").slice(0, 4);
+  const featured = catalog.items;
+  const takeSection = (items: typeof featured) => items.slice(0, 20);
+  const appleProducts = takeSection(featured.filter((product) => product.categoryId !== "c6" && product.categoryId !== "c7"));
+  const accessories = takeSection(featured.filter((product) => product.categoryId === "c5" || product.categoryId === "c7"));
+  const stockProducts = takeSection(featured.filter((product) => product.badges?.some((badge) => badge.type === "limited")));
+  const newProducts = takeSection(featured.filter((product) => product.isNew));
+  const iphoneProducts = takeSection(featured.filter((product) => product.categoryId === "c1"));
+  const macProducts = takeSection(featured.filter((product) => product.categoryId === "c2"));
+  const ipadProducts = takeSection(featured.filter((product) => product.categoryId === "c3"));
+  const watchProducts = takeSection(featured.filter((product) => product.categoryId === "c4"));
+  const airpodsProducts = takeSection(featured.filter((product) => product.categoryId === "c5"));
+  const playstationProducts = takeSection(featured.filter((product) => product.categoryId === "c6"));
 
   return (
     <main className="bg-background">
@@ -55,6 +65,13 @@ export default async function HomePage() {
         </Section>
       ) : null}
 
+      <Section spacing="lg" className="pt-0">
+        <div className="grid gap-4 lg:grid-cols-2">
+          <FeatureBanner title="MacBook Air M4" description="سبک، قدرتمند و آمادهٔ کارهای بزرگ." href="/products?categoryId=c2" image="/images/products/mac/macbook-air-m4.jpg" tone="bg-[#eaf3ff] text-foreground" />
+          <FeatureBanner title="iPad Air M3" description="یک بوم فراگیر برای ایده‌هایی که بزرگ‌تر می‌شوند." href="/products?categoryId=c3" image="/images/products/ipad/ipad-air-m3.jpg" tone="bg-[#10131f] text-white" />
+        </div>
+      </Section>
+
       {/* Featured products */}
       {appleProducts.length > 0 ? (
         <Section spacing="lg" className="bg-surface-secondary/40">
@@ -73,6 +90,25 @@ export default async function HomePage() {
         <PromoBanner />
       </Section>
 
+      {stockProducts.length > 0 ? (
+        <Section spacing="lg" className="bg-surface-secondary/40">
+          <SectionHeader
+            eyebrow="استوک ویژه"
+            title="محصولات استوک"
+            description="انتخاب‌های نمونه با وضعیت شفاف؛ پیش از خرید نهایی، وضعیت فنی و قیمت استعلام می‌شود."
+            viewAllHref="/products?sort=newest"
+          />
+          <ProductGrid products={stockProducts} />
+        </Section>
+      ) : null}
+
+      {newProducts.length > 0 ? <CatalogSection eyebrow="تازه رسیده" title="جدیدترین محصولات فروشگاه" products={newProducts} href="/products?sort=newest" /> : null}
+      {iphoneProducts.length > 0 ? <CatalogSection eyebrow="خانواده iPhone" title="جدیدترین آیفون‌ها" products={iphoneProducts} href="/products?categoryId=c1" muted /> : null}
+      {macProducts.length > 0 ? <CatalogSection eyebrow="خانواده Mac" title="محصولات منتخب Mac" products={macProducts} href="/products?categoryId=c2" /> : null}
+      {ipadProducts.length > 0 ? <CatalogSection eyebrow="خانواده iPad" title="آیپد برای کار و خلاقیت" products={ipadProducts} href="/products?categoryId=c3" muted /> : null}
+      {watchProducts.length > 0 ? <CatalogSection eyebrow="Apple Watch" title="ساعت‌های اپل" products={watchProducts} href="/products?categoryId=c4" /> : null}
+      {airpodsProducts.length > 0 ? <CatalogSection eyebrow="AirPods" title="صدای شخصی اپل" products={airpodsProducts} href="/products?categoryId=c5" muted /> : null}
+
       {/* Compatible accessories */}
       {accessories.length > 0 ? (
         <Section spacing="lg" className="bg-surface-secondary/40">
@@ -85,8 +121,14 @@ export default async function HomePage() {
           <ProductGrid products={accessories} />
         </Section>
       ) : null}
+
+      {playstationProducts.length > 0 ? <CatalogSection eyebrow="PlayStation" title="کنسول‌های PS4 و PS5" products={playstationProducts} href="/products?categoryId=c6" muted /> : null}
     </main>
   );
+}
+
+function CatalogSection({ eyebrow, title, products, href, muted = false }: { eyebrow: string; title: string; products: Awaited<ReturnType<typeof catalogService.listFeatured>>; href: string; muted?: boolean }) {
+  return <Section spacing="lg" className={muted ? "bg-surface-secondary/40" : undefined}><SectionHeader eyebrow={eyebrow} title={title} viewAllHref={href} /><ProductGrid products={products} /></Section>;
 }
 
 /* ---------- SectionHeader ---------- */
@@ -193,7 +235,7 @@ function PromoBanner() {
             بدون محدودیت
           </h3>
           <p className="max-w-md text-sm leading-relaxed opacity-80 sm:text-base">
-            کنسول‌های PS4 و PS5 و لوازم سازگار را در کاتالوگ تخصصی ID site ببینید. داده‌های این بخش نمایشی هستند.
+            کنسول‌های PS4 و PS5 و لوازم سازگار را در کاتالوگ تخصصی ID store ببینید. داده‌های این بخش نمایشی هستند.
           </p>
           <Inline gap={3} className="mt-2">
             <Button asChild size="lg" className="h-12 px-6 text-base">
@@ -219,6 +261,14 @@ function PromoBanner() {
       </div>
     </div>
   );
+}
+
+function FeatureBanner({ title, description, href, image, tone }: { title: string; description: string; href: string; image: string; tone: string }) {
+  return <div className={`relative min-h-[245px] overflow-hidden rounded-[var(--radius-2xl)] ${tone}`}>
+    <Image src={image} alt={title} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover opacity-70" />
+    <div className="absolute inset-0 bg-gradient-to-l from-black/50 via-black/15 to-transparent" />
+    <div className="relative z-10 flex min-h-[245px] max-w-sm flex-col justify-center p-7 sm:p-9"><p className="text-xl font-bold sm:text-2xl">{title}</p><p className="mt-2 text-sm opacity-80">{description}</p><Button asChild size="sm" className="mt-5 w-fit"><Link href={href}>مشاهده محصولات <ArrowLeft size={15} /></Link></Button></div>
+  </div>;
 }
 
 void Container;

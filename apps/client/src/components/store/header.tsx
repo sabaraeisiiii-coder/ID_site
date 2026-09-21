@@ -128,7 +128,6 @@ export function StoreHeader() {
               <SheetHeader className="px-5 pt-5 pb-3 border-b border-border">
                 <SheetTitle className="flex items-center gap-2">
                   <BrandWordmark />
-                  <BrandWordmark />
                 </SheetTitle>
               </SheetHeader>
               <div className="overflow-y-auto h-[calc(100vh-72px)]">
@@ -204,5 +203,5 @@ function CountBadge({ count, highlight = false }: { count: number; highlight?: b
 }
 
 function BrandWordmark({ className = "" }: { className?: string }) {
-  return <span className={`flex flex-col leading-[0.72] font-bold tracking-[-0.06em] text-foreground ${className}`} aria-label="ID site"><span className="text-[34px]">ID</span><span className="mt-1 text-[15px] font-semibold tracking-[-0.04em]">site</span></span>;
+  return <span className={`flex flex-col leading-[0.72] font-bold tracking-[-0.06em] text-foreground ${className}`} aria-label="ID store"><span className="text-[36px]">ID</span><span className="mt-1 text-[15px] font-semibold tracking-[-0.04em]">store</span></span>;
 }

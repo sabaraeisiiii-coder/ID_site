@@ -25,10 +25,10 @@ export function StoreFooter() {
           <div className="lg:col-span-4">
             <Stack gap={4}>
               <div className="flex items-center gap-2">
-                <span className="flex flex-col text-lg font-bold leading-[0.75]" aria-label="ID site"><span className="text-2xl">ID</span><span className="mt-1 text-xs font-semibold">site</span></span>
+                <span className="flex flex-col text-lg font-bold leading-[0.75]" aria-label="ID store"><span className="text-2xl">ID</span><span className="mt-1 text-xs font-semibold">store</span></span>
               </div>
               <p className="max-w-sm text-sm leading-relaxed text-[var(--footer-muted)]">
-                فروشگاه تخصصی ID site برای محصولات اپل و پلی‌استیشن. مشخصات، قیمت و موجودی این نسخه صرفاً داده‌های نمایشی هستند.
+                فروشگاه تخصصی ID store برای محصولات اپل و پلی‌استیشن. مشخصات، قیمت و موجودی این نسخه صرفاً داده‌های نمایشی هستند.
               </p>
               <Stack gap={2} className="mt-2">
                 <a href={`tel:${siteConfig.contact.phoneLatin}`} className="inline-flex items-center gap-2 text-sm text-[var(--footer-muted)] hover:text-background transition-colors">

@@ -11,7 +11,7 @@ export const dynamic = "force-dynamic";
 
 export default async function AdminProductsPage() {
   const [productsResult, categories] = await Promise.all([
-    catalogService.listProducts({ pageSize: 50 }),
+    catalogService.listProducts({ pageSize: 200 }),
     catalogService.listCategories(),
   ]);
 

@@ -14,8 +14,8 @@ const vazirmatn = Vazirmatn({
 });
 
 export const metadata: Metadata = {
-  title: { default: "ID site — پنل مدیریت", template: "%s — ID site" },
-  description: "پنل مدیریت فروشگاه ID site",
+  title: { default: "ID store — پنل مدیریت", template: "%s — ID store" },
+  description: "پنل مدیریت فروشگاه ID store",
   icons: { icon: "/logo.svg" },
 };
 

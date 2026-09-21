@@ -1,8 +1,8 @@
 /** Site-wide identity & navigation. Change once → propagates. */
 
 export const siteConfig = {
-  name: "ID site",
-  nameLatin: "ID site",
+  name: "ID store",
+  nameLatin: "ID store",
   tagline: "اپل و پلی‌استیشن، با انتخاب دقیق",
   description: "فروشگاه تخصصی محصولات اپل و پلی‌استیشن",
   url: "https://id-site.example.com",
@@ -43,7 +43,7 @@ export const siteConfig = {
         ],
       },
       {
-        title: "با ID site",
+        title: "با ID store",
         links: [
           { label: "درباره ما", href: "/pages/about" },
           { label: "قوانین و مقررات", href: "/pages/terms" },
