@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: { default: "ID store — اپل و پلی‌استیشن", template: "%s — ID store" },
   description:
     "فروشگاه تخصصی محصولات اپل و پلی‌استیشن؛ داده‌های محصول در این نسخه نمایشی هستند.",
-  icons: { icon: "/logo.svg" },
+  icons: { icon: "/icon.png" },
 };
 
 export default function RootLayout({

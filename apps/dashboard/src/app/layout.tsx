@@ -16,7 +16,7 @@ const vazirmatn = Vazirmatn({
 export const metadata: Metadata = {
   title: { default: "ID store — پنل مدیریت", template: "%s — ID store" },
   description: "پنل مدیریت فروشگاه ID store",
-  icons: { icon: "/logo.svg" },
+  icons: { icon: "/icon.png" },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

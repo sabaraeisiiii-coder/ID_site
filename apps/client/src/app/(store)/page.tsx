@@ -27,14 +27,13 @@ export default async function HomePage() {
   const allProducts = catalog.items;
   const takeSection = (items: typeof allProducts) => items.slice(0, 20);
   const appleProducts = selectedProducts;
-  const accessories = takeSection(allProducts.filter((product) => product.categoryId === "cat-airpods" || product.categoryId === "cat-apple-accessories"));
+  const accessories = takeSection(allProducts.filter((product) => product.badges?.some((badge) => badge.label === "منتخب لوازم جانبی")));
   const stockProducts = takeSection(allProducts.filter((product) => product.badges?.some((badge) => badge.type === "limited")));
   const newProducts = takeSection(allProducts.filter((product) => product.isNew));
-  const iphoneProducts = takeSection(allProducts.filter((product) => product.categoryId === "cat-iphone"));
-  const macProducts = takeSection(allProducts.filter((product) => product.categoryId === "cat-mac"));
-  const ipadProducts = takeSection(allProducts.filter((product) => product.categoryId === "cat-ipad"));
-  const watchProducts = takeSection(allProducts.filter((product) => product.categoryId === "cat-apple-watch"));
-  const airpodsProducts = takeSection(allProducts.filter((product) => product.categoryId === "cat-airpods"));
+  const macProducts = takeSection(allProducts.filter((product) => product.badges?.some((badge) => badge.label === "منتخب مک")));
+  const ipadProducts = takeSection(allProducts.filter((product) => product.badges?.some((badge) => badge.label === "منتخب آیپد")));
+  const watchProducts = takeSection(allProducts.filter((product) => product.badges?.some((badge) => badge.label === "منتخب ساعت")));
+  const airpodsProducts = takeSection(allProducts.filter((product) => product.badges?.some((badge) => badge.label === "منتخب صوتی")));
   const playstationProducts = takeSection(allProducts.filter((product) => product.categoryId === "cat-playstation"));
 
   return (
@@ -102,7 +101,6 @@ export default async function HomePage() {
       ) : null}
 
       {newProducts.length > 0 ? <CatalogSection eyebrow="تازه رسیده" title="جدیدترین محصولات فروشگاه" products={newProducts} href="/products?sort=newest" /> : null}
-      {iphoneProducts.length > 0 ? <CatalogSection eyebrow="خانواده iPhone" title="جدیدترین آیفون‌ها" products={iphoneProducts} href="/products?categoryId=cat-iphone" muted /> : null}
       {macProducts.length > 0 ? <CatalogSection eyebrow="خانواده Mac" title="محصولات منتخب Mac" products={macProducts} href="/products?categoryId=cat-mac" /> : null}
       {ipadProducts.length > 0 ? <CatalogSection eyebrow="خانواده iPad" title="آیپد برای کار و خلاقیت" products={ipadProducts} href="/products?categoryId=cat-ipad" muted /> : null}
       {watchProducts.length > 0 ? <CatalogSection eyebrow="Apple Watch" title="ساعت‌های اپل" products={watchProducts} href="/products?categoryId=cat-apple-watch" /> : null}
