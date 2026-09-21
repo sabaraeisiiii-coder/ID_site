@@ -1,0 +1,894 @@
+[
+  {
+    "id": "ID-DEMO-001",
+    "slug": "iphone-13-128",
+    "title": "آیفون ۱۳ ظرفیت ۱۲۸ گیگابایت",
+    "titleLatin": "Apple iPhone 13 128GB",
+    "description": "آیفون ۱۳ با حافظه ۱۲۸ گیگابایت؛ نمونه‌ای از خانواده گوشی‌های اپل. این رکورد برای نمونه‌سازی کاتالوگ است و قیمت و موجودی واقعی ندارد.",
+    "brand": "Apple",
+    "category": "iPhone",
+    "categoryId": "cat-iphone",
+    "price": 0,
+    "currency": "تومان",
+    "sku": "ID-DEMO-SKU-001",
+    "status": "draft",
+    "stock": 0,
+    "stockThreshold": 0,
+    "images": [
+      {
+        "id": "img-001-demo",
+        "url": "/images/products/demo/iphone-13-128.svg",
+        "alt": "آیفون ۱۳ ظرفیت ۱۲۸ گیگابایت — تصویر شماتیک نمایشی، نه عکس واقعی محصول"
+      }
+    ],
+    "attributes": [
+      {
+        "label": "حافظه",
+        "value": "128GB"
+      },
+      {
+        "label": "پردازنده",
+        "value": "A15 Bionic"
+      },
+      {
+        "label": "نمایشگر",
+        "value": "6.1 اینچ"
+      }
+    ],
+    "rating": 0,
+    "ratingCount": 0,
+    "badges": [],
+    "isFeatured": false,
+    "isNew": false,
+    "createdAt": "2026-09-21T00:00:00+03:30"
+  },
+  {
+    "id": "ID-DEMO-002",
+    "slug": "iphone-13-pro-512",
+    "title": "آیفون ۱۳ پرو ظرفیت ۵۱۲ گیگابایت",
+    "titleLatin": "Apple iPhone 13 Pro 512GB",
+    "description": "آیفون ۱۳ پرو با حافظه ۵۱۲ گیگابایت و دوربین سه‌گانه. این رکورد برای نمونه‌سازی کاتالوگ است و قیمت و موجودی واقعی ندارد.",
+    "brand": "Apple",
+    "category": "iPhone",
+    "categoryId": "cat-iphone",
+    "price": 0,
+    "currency": "تومان",
+    "sku": "ID-DEMO-SKU-002",
+    "status": "draft",
+    "stock": 0,
+    "stockThreshold": 0,
+    "images": [
+      {
+        "id": "img-002-demo",
+        "url": "/images/products/demo/iphone-13-pro-512.svg",
+        "alt": "آیفون ۱۳ پرو ظرفیت ۵۱۲ گیگابایت — تصویر شماتیک نمایشی، نه عکس واقعی محصول"
+      }
+    ],
+    "attributes": [
+      {
+        "label": "حافظه",
+        "value": "512GB"
+      },
+      {
+        "label": "نمایشگر",
+        "value": "6.1 اینچ"
+      },
+      {
+        "label": "مدل",
+        "value": "iPhone 13 Pro"
+      }
+    ],
+    "rating": 0,
+    "ratingCount": 0,
+    "badges": [],
+    "isFeatured": false,
+    "isNew": false,
+    "createdAt": "2026-09-21T00:00:00+03:30"
+  },
+  {
+    "id": "ID-DEMO-003",
+    "slug": "iphone-15-plus-256",
+    "title": "آیفون ۱۵ پلاس ظرفیت ۲۵۶ گیگابایت",
+    "titleLatin": "Apple iPhone 15 Plus 256GB",
+    "description": "آیفون ۱۵ پلاس با صفحه‌نمایش بزرگ و حافظه ۲۵۶ گیگابایت. این رکورد برای نمونه‌سازی کاتالوگ است و قیمت و موجودی واقعی ندارد.",
+    "brand": "Apple",
+    "category": "iPhone",
+    "categoryId": "cat-iphone",
+    "price": 0,
+    "currency": "تومان",
+    "sku": "ID-DEMO-SKU-003",
+    "status": "draft",
+    "stock": 0,
+    "stockThreshold": 0,
+    "images": [
+      {
+        "id": "img-003-demo",
+        "url": "/images/products/demo/iphone-15-plus-256.svg",
+        "alt": "آیفون ۱۵ پلاس ظرفیت ۲۵۶ گیگابایت — تصویر شماتیک نمایشی، نه عکس واقعی محصول"
+      }
+    ],
+    "attributes": [
+      {
+        "label": "حافظه",
+        "value": "256GB"
+      },
+      {
+        "label": "نمایشگر",
+        "value": "6.7 اینچ"
+      },
+      {
+        "label": "درگاه",
+        "value": "USB-C"
+      }
+    ],
+    "rating": 0,
+    "ratingCount": 0,
+    "badges": [],
+    "isFeatured": false,
+    "isNew": false,
+    "createdAt": "2026-09-21T00:00:00+03:30"
+  },
+  {
+    "id": "ID-DEMO-004",
+    "slug": "macbook-air-15-m3-256",
+    "title": "مک‌بوک ایر ۱۵ اینچ M3 با ۸/۲۵۶ گیگابایت",
+    "titleLatin": "Apple MacBook Air 15-inch M3 8GB/256GB 2024",
+    "description": "مک‌بوک ایر ۱۵ اینچی سال ۲۰۲۴ با تراشه M3. این رکورد برای نمونه‌سازی کاتالوگ است و قیمت و موجودی واقعی ندارد.",
+    "brand": "Apple",
+    "category": "Mac",
+    "categoryId": "cat-mac",
+    "price": 0,
+    "currency": "تومان",
+    "sku": "ID-DEMO-SKU-004",
+    "status": "draft",
+    "stock": 0,
+    "stockThreshold": 0,
+    "images": [
+      {
+        "id": "img-004-demo",
+        "url": "/images/products/demo/macbook-air-15-m3-256.svg",
+        "alt": "مک‌بوک ایر ۱۵ اینچ M3 با ۸/۲۵۶ گیگابایت — تصویر شماتیک نمایشی، نه عکس واقعی محصول"
+      }
+    ],
+    "attributes": [
+      {
+        "label": "تراشه",
+        "value": "M3"
+      },
+      {
+        "label": "رم",
+        "value": "8GB"
+      },
+      {
+        "label": "حافظه",
+        "value": "256GB"
+      },
+      {
+        "label": "نمایشگر",
+        "value": "15.3 اینچ"
+      }
+    ],
+    "rating": 0,
+    "ratingCount": 0,
+    "badges": [],
+    "isFeatured": false,
+    "isNew": false,
+    "createdAt": "2026-09-21T00:00:00+03:30"
+  },
+  {
+    "id": "ID-DEMO-005",
+    "slug": "macbook-air-13-m3-512",
+    "title": "مک‌بوک ایر ۱۳ اینچ M3 با ۸/۵۱۲ گیگابایت",
+    "titleLatin": "Apple MacBook Air 13.6-inch M3 8GB/512GB 2024",
+    "description": "مک‌بوک ایر ۱۳٫۶ اینچی با حافظه ۵۱۲ گیگابایت. این رکورد برای نمونه‌سازی کاتالوگ است و قیمت و موجودی واقعی ندارد.",
+    "brand": "Apple",
+    "category": "Mac",
+    "categoryId": "cat-mac",
+    "price": 0,
+    "currency": "تومان",
+    "sku": "ID-DEMO-SKU-005",
+    "status": "draft",
+    "stock": 0,
+    "stockThreshold": 0,
+    "images": [
+      {
+        "id": "img-005-demo",
+        "url": "/images/products/demo/macbook-air-13-m3-512.svg",
+        "alt": "مک‌بوک ایر ۱۳ اینچ M3 با ۸/۵۱۲ گیگابایت — تصویر شماتیک نمایشی، نه عکس واقعی محصول"
+      }
+    ],
+    "attributes": [
+      {
+        "label": "تراشه",
+        "value": "M3"
+      },
+      {
+        "label": "رم",
+        "value": "8GB"
+      },
+      {
+        "label": "حافظه",
+        "value": "512GB"
+      },
+      {
+        "label": "نمایشگر",
+        "value": "13.6 اینچ"
+      }
+    ],
+    "rating": 0,
+    "ratingCount": 0,
+    "badges": [],
+    "isFeatured": false,
+    "isNew": false,
+    "createdAt": "2026-09-21T00:00:00+03:30"
+  },
+  {
+    "id": "ID-DEMO-006",
+    "slug": "macbook-pro-16-m3-pro-512",
+    "title": "مک‌بوک پرو ۱۶ اینچ M3 Pro با ۳۶/۵۱۲ گیگابایت",
+    "titleLatin": "Apple MacBook Pro 16-inch M3 Pro 36GB/512GB 2023",
+    "description": "مک‌بوک پرو ۱۶ اینچ با تراشه M3 Pro برای پردازش‌های سنگین. این رکورد برای نمونه‌سازی کاتالوگ است و قیمت و موجودی واقعی ندارد.",
+    "brand": "Apple",
+    "category": "Mac",
+    "categoryId": "cat-mac",
+    "price": 0,
+    "currency": "تومان",
+    "sku": "ID-DEMO-SKU-006",
+    "status": "draft",
+    "stock": 0,
+    "stockThreshold": 0,
+    "images": [
+      {
+        "id": "img-006-demo",
+        "url": "/images/products/demo/macbook-pro-16-m3-pro-512.svg",
+        "alt": "مک‌بوک پرو ۱۶ اینچ M3 Pro با ۳۶/۵۱۲ گیگابایت — تصویر شماتیک نمایشی، نه عکس واقعی محصول"
+      }
+    ],
+    "attributes": [
+      {
+        "label": "تراشه",
+        "value": "M3 Pro"
+      },
+      {
+        "label": "رم",
+        "value": "36GB"
+      },
+      {
+        "label": "حافظه",
+        "value": "512GB"
+      },
+      {
+        "label": "نمایشگر",
+        "value": "16.2 اینچ"
+      }
+    ],
+    "rating": 0,
+    "ratingCount": 0,
+    "badges": [],
+    "isFeatured": false,
+    "isNew": false,
+    "createdAt": "2026-09-21T00:00:00+03:30"
+  },
+  {
+    "id": "ID-DEMO-007",
+    "slug": "macbook-pro-13-m2-512",
+    "title": "مک‌بوک پرو ۱۳ اینچ M2 با ۸/۵۱۲ گیگابایت",
+    "titleLatin": "Apple MacBook Pro 13.3-inch M2 8GB/512GB 2022",
+    "description": "مک‌بوک پرو ۱۳٫۳ اینچ مجهز به تراشه M2. این رکورد برای نمونه‌سازی کاتالوگ است و قیمت و موجودی واقعی ندارد.",
+    "brand": "Apple",
+    "category": "Mac",
+    "categoryId": "cat-mac",
+    "price": 0,
+    "currency": "تومان",
+    "sku": "ID-DEMO-SKU-007",
+    "status": "draft",
+    "stock": 0,
+    "stockThreshold": 0,
+    "images": [
+      {
+        "id": "img-007-demo",
+        "url": "/images/products/demo/macbook-pro-13-m2-512.svg",
+        "alt": "مک‌بوک پرو ۱۳ اینچ M2 با ۸/۵۱۲ گیگابایت — تصویر شماتیک نمایشی، نه عکس واقعی محصول"
+      }
+    ],
+    "attributes": [
+      {
+        "label": "تراشه",
+        "value": "M2"
+      },
+      {
+        "label": "رم",
+        "value": "8GB"
+      },
+      {
+        "label": "حافظه",
+        "value": "512GB"
+      },
+      {
+        "label": "نمایشگر",
+        "value": "13.3 اینچ"
+      }
+    ],
+    "rating": 0,
+    "ratingCount": 0,
+    "badges": [],
+    "isFeatured": false,
+    "isNew": false,
+    "createdAt": "2026-09-21T00:00:00+03:30"
+  },
+  {
+    "id": "ID-DEMO-008",
+    "slug": "ipad-mini-6-256-cellular",
+    "title": "آیپد مینی نسل ۶ ظرفیت ۲۵۶ گیگابایت 5G",
+    "titleLatin": "Apple iPad mini 6 256GB Wi-Fi + Cellular",
+    "description": "آیپد مینی نسل ششم با نمایشگر ۸٫۳ اینچی و ارتباط سلولار. این رکورد برای نمونه‌سازی کاتالوگ است و قیمت و موجودی واقعی ندارد.",
+    "brand": "Apple",
+    "category": "iPad",
+    "categoryId": "cat-ipad",
+    "price": 0,
+    "currency": "تومان",
+    "sku": "ID-DEMO-SKU-008",
+    "status": "draft",
+    "stock": 0,
+    "stockThreshold": 0,
+    "images": [
+      {
+        "id": "img-008-demo",
+        "url": "/images/products/demo/ipad-mini-6-256-cellular.svg",
+        "alt": "آیپد مینی نسل ۶ ظرفیت ۲۵۶ گیگابایت 5G — تصویر شماتیک نمایشی، نه عکس واقعی محصول"
+      }
+    ],
+    "attributes": [
+      {
+        "label": "نسل",
+        "value": "6"
+      },
+      {
+        "label": "حافظه",
+        "value": "256GB"
+      },
+      {
+        "label": "نمایشگر",
+        "value": "8.3 اینچ"
+      },
+      {
+        "label": "اتصال",
+        "value": "Wi-Fi + Cellular"
+      }
+    ],
+    "rating": 0,
+    "ratingCount": 0,
+    "badges": [],
+    "isFeatured": false,
+    "isNew": false,
+    "createdAt": "2026-09-21T00:00:00+03:30"
+  },
+  {
+    "id": "ID-DEMO-009",
+    "slug": "ipad-pro-11-m1-256-cellular",
+    "title": "آیپد پرو ۱۱ اینچ M1 ظرفیت ۲۵۶ گیگابایت 5G",
+    "titleLatin": "Apple iPad Pro 11-inch M1 256GB Wi-Fi + Cellular",
+    "description": "آیپد پرو ۱۱ اینچی با تراشه M1 و اتصال سلولار. این رکورد برای نمونه‌سازی کاتالوگ است و قیمت و موجودی واقعی ندارد.",
+    "brand": "Apple",
+    "category": "iPad",
+    "categoryId": "cat-ipad",
+    "price": 0,
+    "currency": "تومان",
+    "sku": "ID-DEMO-SKU-009",
+    "status": "draft",
+    "stock": 0,
+    "stockThreshold": 0,
+    "images": [
+      {
+        "id": "img-009-demo",
+        "url": "/images/products/demo/ipad-pro-11-m1-256-cellular.svg",
+        "alt": "آیپد پرو ۱۱ اینچ M1 ظرفیت ۲۵۶ گیگابایت 5G — تصویر شماتیک نمایشی، نه عکس واقعی محصول"
+      }
+    ],
+    "attributes": [
+      {
+        "label": "تراشه",
+        "value": "M1"
+      },
+      {
+        "label": "حافظه",
+        "value": "256GB"
+      },
+      {
+        "label": "نمایشگر",
+        "value": "11 اینچ"
+      },
+      {
+        "label": "اتصال",
+        "value": "Wi-Fi + Cellular"
+      }
+    ],
+    "rating": 0,
+    "ratingCount": 0,
+    "badges": [],
+    "isFeatured": false,
+    "isNew": false,
+    "createdAt": "2026-09-21T00:00:00+03:30"
+  },
+  {
+    "id": "ID-DEMO-010",
+    "slug": "ipad-pro-11-m4-1tb-cellular",
+    "title": "آیپد پرو ۱۱ اینچ M4 ظرفیت ۱ ترابایت 5G",
+    "titleLatin": "Apple iPad Pro 11-inch M4 1TB Wi-Fi + Cellular",
+    "description": "آیپد پرو ۱۱ اینچی با تراشه M4 و حافظه ۱ ترابایت. این رکورد برای نمونه‌سازی کاتالوگ است و قیمت و موجودی واقعی ندارد.",
+    "brand": "Apple",
+    "category": "iPad",
+    "categoryId": "cat-ipad",
+    "price": 0,
+    "currency": "تومان",
+    "sku": "ID-DEMO-SKU-010",
+    "status": "draft",
+    "stock": 0,
+    "stockThreshold": 0,
+    "images": [
+      {
+        "id": "img-010-demo",
+        "url": "/images/products/demo/ipad-pro-11-m4-1tb-cellular.svg",
+        "alt": "آیپد پرو ۱۱ اینچ M4 ظرفیت ۱ ترابایت 5G — تصویر شماتیک نمایشی، نه عکس واقعی محصول"
+      }
+    ],
+    "attributes": [
+      {
+        "label": "تراشه",
+        "value": "M4"
+      },
+      {
+        "label": "حافظه",
+        "value": "1TB"
+      },
+      {
+        "label": "نمایشگر",
+        "value": "11 اینچ"
+      },
+      {
+        "label": "اتصال",
+        "value": "Wi-Fi + Cellular"
+      }
+    ],
+    "rating": 0,
+    "ratingCount": 0,
+    "badges": [],
+    "isFeatured": false,
+    "isNew": false,
+    "createdAt": "2026-09-21T00:00:00+03:30"
+  },
+  {
+    "id": "ID-DEMO-011",
+    "slug": "ipad-air-13-m3-256-cellular",
+    "title": "آیپد ایر ۱۳ اینچ M3 ظرفیت ۲۵۶ گیگابایت 5G",
+    "titleLatin": "Apple iPad Air 13-inch M3 256GB Wi-Fi + Cellular",
+    "description": "آیپد ایر ۱۳ اینچی با تراشه M3 و ظرفیت ۲۵۶ گیگابایت. این رکورد برای نمونه‌سازی کاتالوگ است و قیمت و موجودی واقعی ندارد.",
+    "brand": "Apple",
+    "category": "iPad",
+    "categoryId": "cat-ipad",
+    "price": 0,
+    "currency": "تومان",
+    "sku": "ID-DEMO-SKU-011",
+    "status": "draft",
+    "stock": 0,
+    "stockThreshold": 0,
+    "images": [
+      {
+        "id": "img-011-demo",
+        "url": "/images/products/demo/ipad-air-13-m3-256-cellular.svg",
+        "alt": "آیپد ایر ۱۳ اینچ M3 ظرفیت ۲۵۶ گیگابایت 5G — تصویر شماتیک نمایشی، نه عکس واقعی محصول"
+      }
+    ],
+    "attributes": [
+      {
+        "label": "تراشه",
+        "value": "M3"
+      },
+      {
+        "label": "حافظه",
+        "value": "256GB"
+      },
+      {
+        "label": "نمایشگر",
+        "value": "13 اینچ"
+      },
+      {
+        "label": "اتصال",
+        "value": "Wi-Fi + Cellular"
+      }
+    ],
+    "rating": 0,
+    "ratingCount": 0,
+    "badges": [],
+    "isFeatured": false,
+    "isNew": false,
+    "createdAt": "2026-09-21T00:00:00+03:30"
+  },
+  {
+    "id": "ID-DEMO-012",
+    "slug": "apple-watch-ultra-green-alpine-49",
+    "title": "اپل واچ اولترا ۴۹ میلی‌متر با بند سبز آلپاین",
+    "titleLatin": "Apple Watch Ultra 49mm Green Alpine Loop",
+    "description": "اپل واچ اولترا با بدنه تیتانیومی و بند آلپاین سبز. این رکورد برای نمونه‌سازی کاتالوگ است و قیمت و موجودی واقعی ندارد.",
+    "brand": "Apple",
+    "category": "Apple Watch",
+    "categoryId": "cat-apple-watch",
+    "price": 0,
+    "currency": "تومان",
+    "sku": "ID-DEMO-SKU-012",
+    "status": "draft",
+    "stock": 0,
+    "stockThreshold": 0,
+    "images": [
+      {
+        "id": "img-012-demo",
+        "url": "/images/products/demo/apple-watch-ultra-green-alpine-49.svg",
+        "alt": "اپل واچ اولترا ۴۹ میلی‌متر با بند سبز آلپاین — تصویر شماتیک نمایشی، نه عکس واقعی محصول"
+      }
+    ],
+    "attributes": [
+      {
+        "label": "خانواده",
+        "value": "Ultra"
+      },
+      {
+        "label": "اندازه بدنه",
+        "value": "49mm"
+      },
+      {
+        "label": "بند",
+        "value": "Green Alpine Loop"
+      }
+    ],
+    "rating": 0,
+    "ratingCount": 0,
+    "badges": [],
+    "isFeatured": false,
+    "isNew": false,
+    "createdAt": "2026-09-21T00:00:00+03:30"
+  },
+  {
+    "id": "ID-DEMO-013",
+    "slug": "apple-watch-series-8-midnight-41",
+    "title": "اپل واچ سری ۸ آلومینیومی میدنایت ۴۱ میلی‌متر",
+    "titleLatin": "Apple Watch Series 8 Midnight Aluminum 41mm",
+    "description": "اپل واچ سری ۸ با بدنه آلومینیومی و بند سیلیکونی میدنایت. این رکورد برای نمونه‌سازی کاتالوگ است و قیمت و موجودی واقعی ندارد.",
+    "brand": "Apple",
+    "category": "Apple Watch",
+    "categoryId": "cat-apple-watch",
+    "price": 0,
+    "currency": "تومان",
+    "sku": "ID-DEMO-SKU-013",
+    "status": "draft",
+    "stock": 0,
+    "stockThreshold": 0,
+    "images": [
+      {
+        "id": "img-013-demo",
+        "url": "/images/products/demo/apple-watch-series-8-midnight-41.svg",
+        "alt": "اپل واچ سری ۸ آلومینیومی میدنایت ۴۱ میلی‌متر — تصویر شماتیک نمایشی، نه عکس واقعی محصول"
+      }
+    ],
+    "attributes": [
+      {
+        "label": "خانواده",
+        "value": "Series 8"
+      },
+      {
+        "label": "اندازه بدنه",
+        "value": "41mm"
+      },
+      {
+        "label": "رنگ",
+        "value": "Midnight"
+      }
+    ],
+    "rating": 0,
+    "ratingCount": 0,
+    "badges": [],
+    "isFeatured": false,
+    "isNew": false,
+    "createdAt": "2026-09-21T00:00:00+03:30"
+  },
+  {
+    "id": "ID-DEMO-014",
+    "slug": "apple-watch-series-7-silver-milanese-45",
+    "title": "اپل واچ سری ۷ استیل نقره‌ای ۴۵ میلی‌متر با بند میلانس",
+    "titleLatin": "Apple Watch Series 7 Silver Stainless Steel 45mm Milanese Loop",
+    "description": "اپل واچ سری ۷ با بدنه استیل نقره‌ای و بند میلانس. این رکورد برای نمونه‌سازی کاتالوگ است و قیمت و موجودی واقعی ندارد.",
+    "brand": "Apple",
+    "category": "Apple Watch",
+    "categoryId": "cat-apple-watch",
+    "price": 0,
+    "currency": "تومان",
+    "sku": "ID-DEMO-SKU-014",
+    "status": "draft",
+    "stock": 0,
+    "stockThreshold": 0,
+    "images": [
+      {
+        "id": "img-014-demo",
+        "url": "/images/products/demo/apple-watch-series-7-silver-milanese-45.svg",
+        "alt": "اپل واچ سری ۷ استیل نقره‌ای ۴۵ میلی‌متر با بند میلانس — تصویر شماتیک نمایشی، نه عکس واقعی محصول"
+      }
+    ],
+    "attributes": [
+      {
+        "label": "خانواده",
+        "value": "Series 7"
+      },
+      {
+        "label": "اندازه بدنه",
+        "value": "45mm"
+      },
+      {
+        "label": "بند",
+        "value": "Milanese Loop"
+      }
+    ],
+    "rating": 0,
+    "ratingCount": 0,
+    "badges": [],
+    "isFeatured": false,
+    "isNew": false,
+    "createdAt": "2026-09-21T00:00:00+03:30"
+  },
+  {
+    "id": "ID-DEMO-015",
+    "slug": "airpods-pro-2",
+    "title": "ایرپاد پرو نسل دوم",
+    "titleLatin": "Apple AirPods Pro (2nd generation)",
+    "description": "هدفون بی‌سیم داخل‌گوشی اپل از خانواده ایرپاد پرو نسل دوم. این رکورد برای نمونه‌سازی کاتالوگ است و قیمت و موجودی واقعی ندارد.",
+    "brand": "Apple",
+    "category": "AirPods",
+    "categoryId": "cat-airpods",
+    "price": 0,
+    "currency": "تومان",
+    "sku": "ID-DEMO-SKU-015",
+    "status": "draft",
+    "stock": 0,
+    "stockThreshold": 0,
+    "images": [
+      {
+        "id": "img-015-demo",
+        "url": "/images/products/demo/airpods-pro-2.svg",
+        "alt": "ایرپاد پرو نسل دوم — تصویر شماتیک نمایشی، نه عکس واقعی محصول"
+      }
+    ],
+    "attributes": [
+      {
+        "label": "خانواده",
+        "value": "AirPods Pro"
+      },
+      {
+        "label": "نسل",
+        "value": "2"
+      },
+      {
+        "label": "نوع",
+        "value": "داخل‌گوشی"
+      }
+    ],
+    "rating": 0,
+    "ratingCount": 0,
+    "badges": [],
+    "isFeatured": false,
+    "isNew": false,
+    "createdAt": "2026-09-21T00:00:00+03:30"
+  },
+  {
+    "id": "ID-DEMO-016",
+    "slug": "airpods-3",
+    "title": "ایرپاد نسل سوم",
+    "titleLatin": "Apple AirPods (3rd generation)",
+    "description": "هدفون بی‌سیم اپل از خانواده ایرپاد نسل سوم. این رکورد برای نمونه‌سازی کاتالوگ است و قیمت و موجودی واقعی ندارد.",
+    "brand": "Apple",
+    "category": "AirPods",
+    "categoryId": "cat-airpods",
+    "price": 0,
+    "currency": "تومان",
+    "sku": "ID-DEMO-SKU-016",
+    "status": "draft",
+    "stock": 0,
+    "stockThreshold": 0,
+    "images": [
+      {
+        "id": "img-016-demo",
+        "url": "/images/products/demo/airpods-3.svg",
+        "alt": "ایرپاد نسل سوم — تصویر شماتیک نمایشی، نه عکس واقعی محصول"
+      }
+    ],
+    "attributes": [
+      {
+        "label": "خانواده",
+        "value": "AirPods"
+      },
+      {
+        "label": "نسل",
+        "value": "3"
+      },
+      {
+        "label": "نوع",
+        "value": "داخل‌گوشی"
+      }
+    ],
+    "rating": 0,
+    "ratingCount": 0,
+    "badges": [],
+    "isFeatured": false,
+    "isNew": false,
+    "createdAt": "2026-09-21T00:00:00+03:30"
+  },
+  {
+    "id": "ID-DEMO-017",
+    "slug": "apple-magsafe-duo",
+    "title": "شارژر دوگانه مگ‌سیف اپل",
+    "titleLatin": "Apple MagSafe Duo Charger",
+    "description": "شارژر تاشوی مگ‌سیف برای شارژ سازگار آیفون و اپل واچ. این رکورد برای نمونه‌سازی کاتالوگ است و قیمت و موجودی واقعی ندارد.",
+    "brand": "Apple",
+    "category": "لوازم جانبی Apple",
+    "categoryId": "cat-apple-accessories",
+    "price": 0,
+    "currency": "تومان",
+    "sku": "ID-DEMO-SKU-017",
+    "status": "draft",
+    "stock": 0,
+    "stockThreshold": 0,
+    "images": [
+      {
+        "id": "img-017-demo",
+        "url": "/images/products/demo/apple-magsafe-duo.svg",
+        "alt": "شارژر دوگانه مگ‌سیف اپل — تصویر شماتیک نمایشی، نه عکس واقعی محصول"
+      }
+    ],
+    "attributes": [
+      {
+        "label": "نوع",
+        "value": "شارژر بی‌سیم"
+      },
+      {
+        "label": "خانواده",
+        "value": "MagSafe Duo"
+      },
+      {
+        "label": "رنگ",
+        "value": "سفید"
+      }
+    ],
+    "rating": 0,
+    "ratingCount": 0,
+    "badges": [],
+    "isFeatured": false,
+    "isNew": false,
+    "createdAt": "2026-09-21T00:00:00+03:30"
+  },
+  {
+    "id": "ID-DEMO-018",
+    "slug": "apple-watch-magnetic-usbc-1m",
+    "title": "کابل شارژ مگنتی اپل واچ USB-C یک‌متری",
+    "titleLatin": "Apple Watch Magnetic Charger to USB-C Cable 1m",
+    "description": "کابل شارژ مگنتی اپل واچ با کانکتور USB-C. این رکورد برای نمونه‌سازی کاتالوگ است و قیمت و موجودی واقعی ندارد.",
+    "brand": "Apple",
+    "category": "لوازم جانبی Apple",
+    "categoryId": "cat-apple-accessories",
+    "price": 0,
+    "currency": "تومان",
+    "sku": "ID-DEMO-SKU-018",
+    "status": "draft",
+    "stock": 0,
+    "stockThreshold": 0,
+    "images": [
+      {
+        "id": "img-018-demo",
+        "url": "/images/products/demo/apple-watch-magnetic-usbc-1m.svg",
+        "alt": "کابل شارژ مگنتی اپل واچ USB-C یک‌متری — تصویر شماتیک نمایشی، نه عکس واقعی محصول"
+      }
+    ],
+    "attributes": [
+      {
+        "label": "نوع",
+        "value": "کابل شارژ"
+      },
+      {
+        "label": "کانکتور",
+        "value": "USB-C"
+      },
+      {
+        "label": "طول",
+        "value": "1m"
+      }
+    ],
+    "rating": 0,
+    "ratingCount": 0,
+    "badges": [],
+    "isFeatured": false,
+    "isNew": false,
+    "createdAt": "2026-09-21T00:00:00+03:30"
+  },
+  {
+    "id": "ID-DEMO-019",
+    "slug": "spigen-ultra-hybrid-iphone-13-pro-max",
+    "title": "قاب شفاف مگ‌سیف اسپیگن برای آیفون ۱۳ پرو مکس",
+    "titleLatin": "Spigen Ultra Hybrid MagSafe iPhone 13 Pro Max",
+    "description": "قاب شفاف مدل Ultra Hybrid سازگار با آیفون ۱۳ پرو مکس. این رکورد برای نمونه‌سازی کاتالوگ است و قیمت و موجودی واقعی ندارد.",
+    "brand": "Spigen",
+    "category": "لوازم جانبی Apple",
+    "categoryId": "cat-apple-accessories",
+    "price": 0,
+    "currency": "تومان",
+    "sku": "ID-DEMO-SKU-019",
+    "status": "draft",
+    "stock": 0,
+    "stockThreshold": 0,
+    "images": [
+      {
+        "id": "img-019-demo",
+        "url": "/images/products/demo/spigen-ultra-hybrid-iphone-13-pro-max.svg",
+        "alt": "قاب شفاف مگ‌سیف اسپیگن برای آیفون ۱۳ پرو مکس — تصویر شماتیک نمایشی، نه عکس واقعی محصول"
+      }
+    ],
+    "attributes": [
+      {
+        "label": "نوع",
+        "value": "قاب آیفون"
+      },
+      {
+        "label": "سازگار با",
+        "value": "iPhone 13 Pro Max"
+      },
+      {
+        "label": "ویژگی",
+        "value": "MagSafe"
+      }
+    ],
+    "rating": 0,
+    "ratingCount": 0,
+    "badges": [],
+    "isFeatured": false,
+    "isNew": false,
+    "createdAt": "2026-09-21T00:00:00+03:30"
+  },
+  {
+    "id": "ID-DEMO-020",
+    "slug": "apple-watch-braided-solo-loop-beige",
+    "title": "بند بافته‌شده سولو لوپ بژ اپل واچ",
+    "titleLatin": "Apple Watch Braided Solo Loop Beige",
+    "description": "بند بافته‌شده سولو لوپ اپل واچ به رنگ بژ. این رکورد برای نمونه‌سازی کاتالوگ است و قیمت و موجودی واقعی ندارد.",
+    "brand": "Apple",
+    "category": "لوازم جانبی Apple",
+    "categoryId": "cat-apple-accessories",
+    "price": 0,
+    "currency": "تومان",
+    "sku": "ID-DEMO-SKU-020",
+    "status": "draft",
+    "stock": 0,
+    "stockThreshold": 0,
+    "images": [
+      {
+        "id": "img-020-demo",
+        "url": "/images/products/demo/apple-watch-braided-solo-loop-beige.svg",
+        "alt": "بند بافته‌شده سولو لوپ بژ اپل واچ — تصویر شماتیک نمایشی، نه عکس واقعی محصول"
+      }
+    ],
+    "attributes": [
+      {
+        "label": "نوع",
+        "value": "بند ساعت"
+      },
+      {
+        "label": "خانواده",
+        "value": "Braided Solo Loop"
+      },
+      {
+        "label": "رنگ",
+        "value": "بژ"
+      }
+    ],
+    "rating": 0,
+    "ratingCount": 0,
+    "badges": [],
+    "isFeatured": false,
+    "isNew": false,
+    "createdAt": "2026-09-21T00:00:00+03:30"
+  }
+]

@@ -1,47 +1,45 @@
-/** Dashboard mock catalog mirrors the storefront. All inventory and prices are demonstrative. */
+/** Dashboard catalogue reconstructed from the same imported product seed. */
+import sourceProducts from "./data/products.seed.json";
 import type { Category, Product } from "./types";
-const devices = "/images/showcase/id-site-devices.png";
-const consoleImage = "/images/products/gaming-console.png";
-const earbudsImage = "/images/products/wireless-earbuds.png";
-const chargingImage = "/images/products/charging-accessories.png";
-const iphoneImage = "/images/showcase/iphone-highlight.png";
-const macImage = "/images/showcase/mac-highlight.png";
-const ipadImage = "/images/showcase/ipad-highlight.png";
-const iphone16ProImage = "/images/products/iphone/iphone-16-pro.jpg";
-const macbookAirM4Image = "/images/products/mac/macbook-air-m4.jpg";
-const ipadAirM3Image = "/images/products/ipad/ipad-air-m3.jpg";
-const appleWatchSeries10Image = "/images/products/apple-watch/apple-watch-series-10.jpg";
-const airpodsPro2Image = "/images/products/airpods/airpods-pro-2-usb-c.jpg";
-const iphone16Image = "/images/products/iphone/iphone-16.jpg";
-const macbookProM5Image = "/images/products/mac/macbook-pro-14-m5.jpg";
-const ipadProM4Image = "/images/products/ipad/ipad-pro-m4.jpg";
-const officialIphoneCatalogImage = "/images/products/catalog/iphone-official.png";
-const officialMacCatalogImage = "/images/products/catalog/mac-official.png";
-const officialIpadCatalogImage = "/images/products/catalog/ipad-official.png";
-const officialWatchCatalogImage = "/images/products/catalog/watch-official.png";
-const officialAirpodsCatalogImage = "/images/products/catalog/airpods-official.png";
-const officialAppleAccessoriesCatalogImage = "/images/products/catalog/apple-accessories-official.jpg";
-const date = "2026-09-01T10:00:00Z";
-export const categories: Category[] = [
-  ["c1", "iphone", "iPhone", "مدل‌های آیفون", iphone16ProImage, 12], ["c2", "mac", "Mac", "مک‌بوک و مک", macbookAirM4Image, 8], ["c3", "ipad", "iPad", "آیپد", ipadAirM3Image, 7], ["c4", "apple-watch", "Apple Watch", "ساعت‌های اپل", appleWatchSeries10Image, 5], ["c5", "airpods", "AirPods", "ایرپاد", airpodsPro2Image, 6], ["c6", "playstation", "PlayStation", "فقط PS4 و PS5", consoleImage, 6], ["c7", "apple-accessories", "لوازم جانبی اپل", "لوازم سازگار با اپل", devices, 10],
-].map(([id, slug, name, description, image, productCount], index) => ({ id, slug, name, description, image, productCount, parentId: null, status: "active" as const, order: index + 1 })) as Category[];
-const product = (id: string, slug: string, title: string, titleLatin: string, brand: string, category: string, categoryId: string, image: string, options: Partial<Product> = {}): Product => ({ id, slug, title, titleLatin, brand, category, categoryId, price: 0, currency: "تومان", sku: `DEMO-${id.toUpperCase()}`, status: "active", stock: 12, stockThreshold: 3, description: "داده‌های نمونه برای هم‌راستاسازی رابط مدیریت با فروشگاه ID store.", images: [{ id: `${id}-image`, url: image, alt: title }], attributes: [{ label: "وضعیت داده", value: "نمونه / غیرتأییدشده" }], rating: 4.8, ratingCount: 24, createdAt: date, ...options });
-export const products: Product[] = [
-  product("p1", "iphone-pro-demo", "iPhone 16 Pro", "iPhone 16 Pro", "Apple", "iPhone", "c1", iphone16ProImage, { isFeatured: true, isNew: true, badges: [{ type: "limited", label: "استوک ویژه" }], attributes: [{ label: "وضعیت محصول", value: "استوک ویژه / نیازمند استعلام" }] }), product("p2", "macbook-air-demo", "MacBook Air (M4)", "MacBook Air (M4)", "Apple", "Mac", "c2", macbookAirM4Image, { isFeatured: true, badges: [{ type: "limited", label: "استوک ویژه" }], attributes: [{ label: "وضعیت محصول", value: "استوک ویژه / نیازمند استعلام" }] }), product("p3", "ipad-air-demo", "iPad Air (M3)", "iPad Air (M3)", "Apple", "iPad", "c3", ipadAirM3Image, { isFeatured: true, isNew: true, badges: [{ type: "limited", label: "استوک ویژه" }], attributes: [{ label: "وضعیت محصول", value: "استوک ویژه / نیازمند استعلام" }] }), product("p4", "apple-watch-demo", "Apple Watch Series 10", "Apple Watch Series 10", "Apple", "Apple Watch", "c4", appleWatchSeries10Image, { isFeatured: true }), product("p5", "airpods-pro-demo", "AirPods Pro (2nd generation)", "AirPods Pro (2nd generation)", "Apple", "AirPods", "c5", airpodsPro2Image, { isFeatured: true, isNew: true }), product("p6", "playstation-5-demo", "PlayStation 5", "PlayStation 5", "PlayStation", "PlayStation", "c6", consoleImage, { isFeatured: true, isNew: true }), product("p7", "playstation-4-demo", "PlayStation 4", "PlayStation 4", "PlayStation", "PlayStation", "c6", consoleImage, { isFeatured: true, badges: [{ type: "limited", label: "استوک ویژه" }], attributes: [{ label: "وضعیت محصول", value: "استوک ویژه / نیازمند استعلام" }] }), product("p8", "apple-usb-c-accessory-demo", "لوازم جانبی USB-C", "USB-C Accessories", "ID store", "لوازم جانبی اپل", "c7", chargingImage, { isFeatured: true }), product("p9", "magsafe-charger-demo", "شارژر مغناطیسی", "Magnetic Charger", "ID store", "لوازم جانبی اپل", "c7", chargingImage, { isFeatured: true }), product("p10", "iphone-case-demo", "قاب شفاف گوشی", "Clear Phone Case", "ID store", "لوازم جانبی اپل", "c7", devices, { isFeatured: true }), product("p11", "iphone-16", "iPhone 16", "iPhone 16", "Apple", "iPhone", "c1", iphone16Image, { isFeatured: true, isNew: true, attributes: [{ label: "تراشه", value: "A18" }, { label: "نمایشگر", value: "۶٫۱ اینچ" }] }), product("p12", "macbook-pro-14-m5", "MacBook Pro 14-inch (M5)", "MacBook Pro 14-inch (M5)", "Apple", "Mac", "c2", macbookProM5Image, { isFeatured: true, isNew: true, attributes: [{ label: "تراشه", value: "M5" }, { label: "نمایشگر", value: "۱۴ اینچ" }] }), product("p13", "ipad-pro-m4", "iPad Pro (M4)", "iPad Pro (M4)", "Apple", "iPad", "c3", ipadProM4Image, { isFeatured: true, isNew: true, attributes: [{ label: "تراشه", value: "M4" }, { label: "نمایشگر", value: "۱۱ اینچ" }] }),
-];
-const productFamilies = [
-  { categoryId: "c1", category: "iPhone", prefix: "iphone", title: "iPhone", image: officialIphoneCatalogImage }, { categoryId: "c2", category: "Mac", prefix: "mac", title: "MacBook", image: officialMacCatalogImage }, { categoryId: "c3", category: "iPad", prefix: "ipad", title: "iPad", image: officialIpadCatalogImage }, { categoryId: "c4", category: "Apple Watch", prefix: "apple-watch", title: "Apple Watch", image: officialWatchCatalogImage }, { categoryId: "c5", category: "AirPods", prefix: "airpods", title: "AirPods", image: officialAirpodsCatalogImage }, { categoryId: "c6", category: "PlayStation", prefix: "playstation", title: "PlayStation", image: consoleImage }, { categoryId: "c7", category: "Apple Accessories", prefix: "apple-accessory", title: "Apple Accessory", image: officialAppleAccessoriesCatalogImage },
-] as const;
-let nextProductNumber = products.length + 1;
-for (const family of productFamilies) {
-  const missing = 20 - products.filter((item) => item.categoryId === family.categoryId).length;
-  for (let index = 0; index < missing; index += 1) {
-    const sequence = index + 1;
-    const id = `p${nextProductNumber++}`;
-    products.push(product(id, `${family.prefix}-${sequence.toString().padStart(2, "0")}`, `${family.title} ${sequence}`, `${family.title} ${sequence}`, family.categoryId === "c6" ? "PlayStation" : "Apple", family.category, family.categoryId, family.image, { isFeatured: true, isNew: sequence <= 3, stock: sequence % 7 === 0 ? 2 : 12, rating: 4.5 + (sequence % 5) / 10, ratingCount: 18 + sequence * 7, badges: sequence <= 3 ? [{ type: "limited", label: "Special stock" }] : undefined }));
-  }
-}
-categories.forEach((category) => { category.productCount = products.filter((product) => product.categoryId === category.id).length; });
 
-export const featuredProducts = products.filter((p) => p.isFeatured);
-export const newArrivalProducts = products.filter((p) => p.isNew);
+const categoryMeta = {
+  "cat-iphone": { slug: "iphone", name: "iPhone", description: "مدل‌های آیفون", image: "/images/products/catalog/iphone-official.png" },
+  "cat-mac": { slug: "mac", name: "Mac", description: "مک‌بوک و مک", image: "/images/products/catalog/mac-official.png" },
+  "cat-ipad": { slug: "ipad", name: "iPad", description: "آیپد برای کار و خلاقیت", image: "/images/products/catalog/ipad-official.png" },
+  "cat-apple-watch": { slug: "apple-watch", name: "Apple Watch", description: "ساعت‌های اپل", image: "/images/products/catalog/watch-official.png" },
+  "cat-airpods": { slug: "airpods", name: "AirPods", description: "ایرپاد و صدای شخصی", image: "/images/products/catalog/airpods-official.png" },
+  "cat-apple-tv": { slug: "apple-tv", name: "Apple TV", description: "تلویزیون و سرگرمی اپل", image: "/images/products/catalog/apple-accessories-official.jpg" },
+  "cat-apple-accessories": { slug: "apple-accessories", name: "لوازم جانبی Apple", description: "لوازم سازگار با محصولات اپل", image: "/images/products/catalog/apple-accessories-official.jpg" },
+} as const;
+
+type CategoryId = keyof typeof categoryMeta;
+const imageFor = (categoryId: string) => categoryMeta[categoryId as CategoryId]?.image ?? "/images/products/charging-accessories.png";
+
+const importedProducts: Product[] = sourceProducts.map((product) => ({
+  ...product,
+  status: "active",
+  stock: product.stock || 12,
+  stockThreshold: product.stockThreshold || 3,
+  images: product.images.map((image) => ({ ...image, url: imageFor(product.categoryId) })),
+  rating: product.rating || 4.7,
+  ratingCount: product.ratingCount || 20,
+  isFeatured: false,
+})) as Product[];
+
+const selectedDefinitions = [
+  ["selected-01", "imac-blue", "آل این وان اپل مدل iMac آبی", "Apple iMac – Blue", "Apple", "Mac", "cat-mac", "ChatGPT%20Image%20Sep%2021%2C%202026%2C%2012_18_27%20PM%20%281%29.png"], ["selected-02", "iphone-16-pro-desert-titanium", "گوشی اپل مدل iPhone 16 Pro رنگ تیتانیومی صحرایی", "Apple iPhone 16 Pro – Desert Titanium", "Apple", "iPhone", "cat-iphone", "ChatGPT%20Image%20Sep%2021%2C%202026%2C%2012_18_27%20PM%20%282%29.png"], ["selected-03", "macbook-pro-space-gray", "لپ تاپ اپل مدل MacBook Pro رنگ خاکستری فضایی", "Apple MacBook Pro – Space Gray", "Apple", "Mac", "cat-mac", "ChatGPT%20Image%20Sep%2021%2C%202026%2C%2012_18_28%20PM%20%283%29.png"], ["selected-04", "ipad-pro-space-gray", "تبلت اپل مدل iPad Pro رنگ خاکستری فضایی", "Apple iPad Pro – Space Gray", "Apple", "iPad", "cat-ipad", "ChatGPT%20Image%20Sep%2021%2C%202026%2C%2012_18_28%20PM%20%284%29.png"], ["selected-05", "apple-watch-ultra-2-trail-loop", "ساعت هوشمند اپل مدل Apple Watch Ultra 2 با بند تریل لوپ", "Apple Watch Ultra 2 – Titanium", "Apple", "Apple Watch", "cat-apple-watch", "ChatGPT%20Image%20Sep%2021%2C%202026%2C%2012_18_40%20PM%20%281%29.png"], ["selected-06", "airpods-max-silver", "هدفون بی‌سیم اپل مدل AirPods Max رنگ نقره‌ای", "Apple AirPods Max – Silver", "Apple", "AirPods", "cat-airpods", "ChatGPT%20Image%20Sep%2021%2C%202026%2C%2012_18_41%20PM%20%282%29.png"], ["selected-07", "airpods-pro-2", "هندزفری بلوتوثی اپل مدل AirPods Pro نسل دوم", "Apple AirPods Pro (2nd Generation)", "Apple", "AirPods", "cat-airpods", "ChatGPT%20Image%20Sep%2021%2C%202026%2C%2012_18_42%20PM%20%283%29.png"], ["selected-08", "mac-mini-silver", "کامپیوتر کوچک اپل مدل Mac mini رنگ نقره‌ای", "Apple Mac mini – Silver", "Apple", "Mac", "cat-mac", "ChatGPT%20Image%20Sep%2021%2C%202026%2C%2012_18_42%20PM%20%284%29.png"], ["selected-09", "ipad-pro-magic-keyboard", "تبلت اپل مدل iPad Pro به همراه کیبورد Magic Keyboard", "Apple iPad Pro with Magic Keyboard", "Apple", "iPad", "cat-ipad", "ChatGPT%20Image%20Sep%2021%2C%202026%2C%2012_18_43%20PM%20%285%29.png"], ["selected-10", "apple-tv-4k-siri-remote", "دستگاه پخش هوشمند اپل مدل Apple TV 4K به همراه ریموت Siri", "Apple TV 4K with Siri Remote", "Apple", "Apple TV", "cat-apple-tv", "ChatGPT%20Image%20Sep%2021%2C%202026%2C%2012_18_44%20PM%20%286%29.png"],
+] as const;
+const selectedProducts: Product[] = selectedDefinitions.map(([id, slug, title, titleLatin, brand, category, categoryId, image]) => ({ id, slug, title, titleLatin, brand, category, categoryId, price: 0, currency: "تومان", sku: `SELECTED-${id}`, status: "active", stock: 12, stockThreshold: 3, description: `${title}؛ محصول منتخب فروشگاه.`, images: [{ id: `${id}-image`, url: `/product-images/${image}`, alt: title }], attributes: [], rating: 4.8, ratingCount: 20, badges: [{ type: "featured", label: "محصول منتخب" }], isFeatured: true, isNew: false, createdAt: "2026-09-21T00:00:00+03:30" }));
+export const products: Product[] = [...importedProducts, ...selectedProducts];
+
+export const categories: Category[] = Object.entries(categoryMeta).map(([id, meta], index) => ({
+  id,
+  ...meta,
+  parentId: null,
+  status: "active",
+  order: index + 1,
+  productCount: products.filter((product) => product.categoryId === id).length,
+}));
+
+export const featuredProducts = products.filter((product) => product.isFeatured);
+export const newArrivalProducts = products.filter((product) => product.isNew);

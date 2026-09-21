@@ -19,22 +19,23 @@ export const metadata = {
 };
 
 export default async function HomePage() {
-  const [catalog, categories] = await Promise.all([
+  const [catalog, selectedProducts, categories] = await Promise.all([
     catalogService.listProducts({ pageSize: 200 }),
+    catalogService.listFeatured(10),
     catalogService.listCategories(),
   ]);
-  const featured = catalog.items;
-  const takeSection = (items: typeof featured) => items.slice(0, 20);
-  const appleProducts = takeSection(featured.filter((product) => product.categoryId !== "c6" && product.categoryId !== "c7"));
-  const accessories = takeSection(featured.filter((product) => product.categoryId === "c5" || product.categoryId === "c7"));
-  const stockProducts = takeSection(featured.filter((product) => product.badges?.some((badge) => badge.type === "limited")));
-  const newProducts = takeSection(featured.filter((product) => product.isNew));
-  const iphoneProducts = takeSection(featured.filter((product) => product.categoryId === "c1"));
-  const macProducts = takeSection(featured.filter((product) => product.categoryId === "c2"));
-  const ipadProducts = takeSection(featured.filter((product) => product.categoryId === "c3"));
-  const watchProducts = takeSection(featured.filter((product) => product.categoryId === "c4"));
-  const airpodsProducts = takeSection(featured.filter((product) => product.categoryId === "c5"));
-  const playstationProducts = takeSection(featured.filter((product) => product.categoryId === "c6"));
+  const allProducts = catalog.items;
+  const takeSection = (items: typeof allProducts) => items.slice(0, 20);
+  const appleProducts = selectedProducts;
+  const accessories = takeSection(allProducts.filter((product) => product.categoryId === "cat-airpods" || product.categoryId === "cat-apple-accessories"));
+  const stockProducts = takeSection(allProducts.filter((product) => product.badges?.some((badge) => badge.type === "limited")));
+  const newProducts = takeSection(allProducts.filter((product) => product.isNew));
+  const iphoneProducts = takeSection(allProducts.filter((product) => product.categoryId === "cat-iphone"));
+  const macProducts = takeSection(allProducts.filter((product) => product.categoryId === "cat-mac"));
+  const ipadProducts = takeSection(allProducts.filter((product) => product.categoryId === "cat-ipad"));
+  const watchProducts = takeSection(allProducts.filter((product) => product.categoryId === "cat-apple-watch"));
+  const airpodsProducts = takeSection(allProducts.filter((product) => product.categoryId === "cat-airpods"));
+  const playstationProducts = takeSection(allProducts.filter((product) => product.categoryId === "cat-playstation"));
 
   return (
     <main className="bg-background">
@@ -67,8 +68,8 @@ export default async function HomePage() {
 
       <Section spacing="lg" className="pt-0">
         <div className="grid gap-4 lg:grid-cols-2">
-          <FeatureBanner title="MacBook Air M4" description="سبک، قدرتمند و آمادهٔ کارهای بزرگ." href="/products?categoryId=c2" image="/images/products/mac/macbook-air-m4.jpg" tone="bg-[#eaf3ff] text-foreground" />
-          <FeatureBanner title="iPad Air M3" description="یک بوم فراگیر برای ایده‌هایی که بزرگ‌تر می‌شوند." href="/products?categoryId=c3" image="/images/products/ipad/ipad-air-m3.jpg" tone="bg-[#10131f] text-white" />
+          <FeatureBanner title="MacBook Air M3" description="سبک، قدرتمند و آمادهٔ کارهای بزرگ." href="/products?categoryId=cat-mac" image="/images/products/catalog/mac-official.png" tone="bg-[#eaf3ff] text-foreground" />
+          <FeatureBanner title="iPad Air M3" description="یک بوم فراگیر برای ایده‌هایی که بزرگ‌تر می‌شوند." href="/products?categoryId=cat-ipad" image="/images/products/catalog/ipad-official.png" tone="bg-[#10131f] text-white" />
         </div>
       </Section>
 
@@ -86,9 +87,7 @@ export default async function HomePage() {
       ) : null}
 
       {/* Promo banner */}
-      <Section spacing="lg">
-        <PromoBanner />
-      </Section>
+      {playstationProducts.length > 0 ? <Section spacing="lg"><PromoBanner /></Section> : null}
 
       {stockProducts.length > 0 ? (
         <Section spacing="lg" className="bg-surface-secondary/40">
@@ -103,11 +102,11 @@ export default async function HomePage() {
       ) : null}
 
       {newProducts.length > 0 ? <CatalogSection eyebrow="تازه رسیده" title="جدیدترین محصولات فروشگاه" products={newProducts} href="/products?sort=newest" /> : null}
-      {iphoneProducts.length > 0 ? <CatalogSection eyebrow="خانواده iPhone" title="جدیدترین آیفون‌ها" products={iphoneProducts} href="/products?categoryId=c1" muted /> : null}
-      {macProducts.length > 0 ? <CatalogSection eyebrow="خانواده Mac" title="محصولات منتخب Mac" products={macProducts} href="/products?categoryId=c2" /> : null}
-      {ipadProducts.length > 0 ? <CatalogSection eyebrow="خانواده iPad" title="آیپد برای کار و خلاقیت" products={ipadProducts} href="/products?categoryId=c3" muted /> : null}
-      {watchProducts.length > 0 ? <CatalogSection eyebrow="Apple Watch" title="ساعت‌های اپل" products={watchProducts} href="/products?categoryId=c4" /> : null}
-      {airpodsProducts.length > 0 ? <CatalogSection eyebrow="AirPods" title="صدای شخصی اپل" products={airpodsProducts} href="/products?categoryId=c5" muted /> : null}
+      {iphoneProducts.length > 0 ? <CatalogSection eyebrow="خانواده iPhone" title="جدیدترین آیفون‌ها" products={iphoneProducts} href="/products?categoryId=cat-iphone" muted /> : null}
+      {macProducts.length > 0 ? <CatalogSection eyebrow="خانواده Mac" title="محصولات منتخب Mac" products={macProducts} href="/products?categoryId=cat-mac" /> : null}
+      {ipadProducts.length > 0 ? <CatalogSection eyebrow="خانواده iPad" title="آیپد برای کار و خلاقیت" products={ipadProducts} href="/products?categoryId=cat-ipad" muted /> : null}
+      {watchProducts.length > 0 ? <CatalogSection eyebrow="Apple Watch" title="ساعت‌های اپل" products={watchProducts} href="/products?categoryId=cat-apple-watch" /> : null}
+      {airpodsProducts.length > 0 ? <CatalogSection eyebrow="AirPods" title="صدای شخصی اپل" products={airpodsProducts} href="/products?categoryId=cat-airpods" muted /> : null}
 
       {/* Compatible accessories */}
       {accessories.length > 0 ? (
@@ -116,7 +115,7 @@ export default async function HomePage() {
             eyebrow="لوازم سازگار"
             title="لوازم جانبی محبوب"
             description="انتخاب‌های نمایشی سازگار با محصولات اپل."
-            viewAllHref="/products?categoryId=c7"
+            viewAllHref="/products?categoryId=cat-apple-accessories"
           />
           <ProductGrid products={accessories} />
         </Section>
