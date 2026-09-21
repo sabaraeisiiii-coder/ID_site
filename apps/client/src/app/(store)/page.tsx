@@ -5,7 +5,8 @@ import { ArrowLeft, ShieldCheck, Truck, RefreshCw, Headphones } from "lucide-rea
 
 import { Container, Section, Stack, Inline, Grid } from "@/design-system/primitives";
 import { Hero } from "@/components/store/hero";
-import { CategoryGrid } from "@/components/store/category-grid";
+import { AppleHighlights } from "@/components/store/apple-highlights";
+import { HomepageCategoryStrip } from "@/components/store/homepage-category-strip";
 import { ProductGrid } from "@/components/store/product-grid";
 import { Button } from "@/components/ui/button";
 import { catalogService } from "@/domains/catalog/service";
@@ -18,16 +19,18 @@ export const metadata = {
 };
 
 export default async function HomePage() {
-  const [featured, newArrivals, categories] = await Promise.all([
+  const [featured, categories] = await Promise.all([
     catalogService.listFeatured(8),
-    catalogService.listNewArrivals(4),
     catalogService.listCategories(),
   ]);
+  const appleProducts = featured.filter((product) => product.categoryId !== "c6" && product.categoryId !== "c7").slice(0, 4);
+  const accessories = featured.filter((product) => product.categoryId === "c5" || product.categoryId === "c7").slice(0, 4);
 
   return (
     <main className="bg-background">
       {/* Hero */}
       <Hero />
+      <AppleHighlights />
 
       {/* Trust badges */}
       <Section spacing="sm" containerSize="default" className="border-y border-border bg-surface/50">
@@ -48,12 +51,12 @@ export default async function HomePage() {
             description="اپل، پلی‌استیشن و لوازم جانبی سازگار در یک کاتالوگ تخصصی."
             viewAllHref="/products"
           />
-          <CategoryGrid categories={categories} />
+          <HomepageCategoryStrip categories={categories} />
         </Section>
       ) : null}
 
       {/* Featured products */}
-      {featured.length > 0 ? (
+      {appleProducts.length > 0 ? (
         <Section spacing="lg" className="bg-surface-secondary/40">
           <SectionHeader
             eyebrow="منتخب فروشگاه"
@@ -61,7 +64,7 @@ export default async function HomePage() {
             description="انتخاب‌های نمایشی از خانواده‌های اصلی اپل و PlayStation."
             viewAllHref="/products?sort=popular"
           />
-          <ProductGrid products={featured} />
+          <ProductGrid products={appleProducts} />
         </Section>
       ) : null}
 
@@ -70,16 +73,16 @@ export default async function HomePage() {
         <PromoBanner />
       </Section>
 
-      {/* New arrivals */}
-      {newArrivals.length > 0 ? (
+      {/* Compatible accessories */}
+      {accessories.length > 0 ? (
         <Section spacing="lg" className="bg-surface-secondary/40">
           <SectionHeader
-            eyebrow="تازه‌ها"
-            title="تازه‌های کاتالوگ"
-            description="مدل‌ها و خانواده‌های تازه‌افزوده‌شده به داده‌های نمایشی."
-            viewAllHref="/products?sort=newest"
+            eyebrow="لوازم سازگار"
+            title="لوازم جانبی محبوب"
+            description="انتخاب‌های نمایشی سازگار با محصولات اپل."
+            viewAllHref="/products?categoryId=c7"
           />
-          <ProductGrid products={newArrivals} />
+          <ProductGrid products={accessories} />
         </Section>
       ) : null}
     </main>
@@ -182,21 +185,20 @@ function PromoBanner() {
             }}
           >
             <span className="size-1.5 rounded-full" style={{ background: "var(--background)" }} />
-            پیشنهاد ویژه
+            دنیای بازی
           </span>
           <h3 className="max-w-sm text-2xl font-bold leading-tight tracking-tight sm:text-3xl lg:text-4xl">
-            تا {toPersianDigits(40)}٪ تخفیف
+            پلی‌استیشن،
             <br />
-            روی کلکسیون پاییز
+            بدون محدودیت
           </h3>
           <p className="max-w-md text-sm leading-relaxed opacity-80 sm:text-base">
-            فقط تا پایان هفته، روی صدها محصول منتخب تخفیف‌های ویژه اعمال شده است.
-            فرصت را از دست ندهید.
+            کنسول‌های PS4 و PS5 و لوازم سازگار را در کاتالوگ تخصصی ID site ببینید. داده‌های این بخش نمایشی هستند.
           </p>
           <Inline gap={3} className="mt-2">
             <Button asChild size="lg" className="h-12 px-6 text-base">
-              <Link href="/products?onSale=true">
-                مشاهده تخفیف‌ها
+              <Link href="/products?categoryId=c6">
+                مشاهده محصولات
                 <ArrowLeft size={18} strokeWidth={2} />
               </Link>
             </Button>

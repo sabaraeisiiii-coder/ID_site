@@ -49,34 +49,22 @@ export function StoreHeader() {
         transitionDuration: "var(--duration-normal)",
       }}
     >
-      <Container className="flex items-center justify-between gap-4" style={{ height: "var(--header-height-desktop)" }}>
+      <div className="hidden border-b border-white/10 bg-foreground py-1.5 text-[11px] text-background lg:block">
+        <Container className="flex items-center justify-between"><span>ارسال سریع به سراسر ایران</span><span>اطلاعات قیمت و موجودی در این نسخه نمایشی است</span></Container>
+      </div>
+      <Container className="flex max-w-[1440px] items-center justify-between gap-6 px-5 sm:px-8" style={{ height: "84px" }}>
         {/* Right (RTL): logo + nav */}
         <div className="flex items-center gap-4 lg:gap-6">
-          <Link href="/" className="flex items-center gap-2 shrink-0" aria-label={siteConfig.name}>
-            <Logo />
-            <BrandWordmark className="hidden sm:inline-flex" />
+          <Link href="/" className="flex shrink-0" aria-label={siteConfig.name}>
+            <BrandWordmark className="inline-flex" />
           </Link>
-
-          <nav className="hidden lg:flex items-center gap-1" aria-label="منوی اصلی">
-            <MegaMenu />
-            {siteConfig.nav.main.slice(1).map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="inline-flex items-center px-3 py-2 rounded-md text-sm font-medium text-foreground-secondary hover:text-foreground hover:bg-surface-secondary transition-colors"
-                style={{ transitionDuration: "var(--duration-fast)" }}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
         </div>
 
         {/* Center: search trigger */}
         <button
           type="button"
           onClick={openSearch}
-          className="hidden md:flex items-center gap-2 h-10 px-3 rounded-md bg-surface-secondary border border-transparent hover:border-border transition-colors max-w-md flex-1 mx-auto text-start"
+          className="hidden md:flex items-center gap-2 h-11 px-4 rounded-full bg-surface-secondary border border-border/70 hover:border-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 transition-colors max-w-2xl flex-1 mx-auto text-start"
           aria-label="جستجو"
         >
           <Search size={16} strokeWidth={1.75} className="text-foreground-tertiary" />
@@ -139,7 +127,7 @@ export function StoreHeader() {
             <SheetContent side="right" className="w-full sm:max-w-sm p-0">
               <SheetHeader className="px-5 pt-5 pb-3 border-b border-border">
                 <SheetTitle className="flex items-center gap-2">
-                  <Logo />
+                  <BrandWordmark />
                   <BrandWordmark />
                 </SheetTitle>
               </SheetHeader>
@@ -187,6 +175,12 @@ export function StoreHeader() {
           </Sheet>
         </div>
       </Container>
+      <div className="hidden border-t border-border/70 lg:block">
+        <Container className="flex h-12 max-w-[1440px] items-center gap-2 px-5 sm:px-8">
+          <MegaMenu />
+          {siteConfig.nav.main.slice(1).map((item) => <Link key={item.href} href={item.href} className="inline-flex items-center rounded-md px-3 py-2 text-sm font-medium text-foreground-secondary transition-colors hover:bg-surface-secondary hover:text-foreground">{item.label}</Link>)}
+        </Container>
+      </div>
     </header>
   );
 }
@@ -209,23 +203,6 @@ function CountBadge({ count, highlight = false }: { count: number; highlight?: b
   );
 }
 
-function Logo() {
-  return (
-    <span
-      aria-hidden
-      className="inline-flex items-center justify-center rounded-lg"
-      style={{ width: 32, height: 32, background: "var(--primary)", color: "var(--primary-foreground)" }}
-    >
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-        <path d="M5 7 L12 4 L19 7 L19 17 L12 20 L5 17 Z"
-          stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" fill="none" />
-        <path d="M9 10 L9 15 M12 8 L12 16 M15 10 L15 15"
-          stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-      </svg>
-    </span>
-  );
-}
-
 function BrandWordmark({ className = "" }: { className?: string }) {
-  return <span className={`flex flex-col leading-[0.82] font-bold tracking-tight ${className}`} aria-label="ID site"><span>ID</span><span className="text-[0.72em] font-medium text-foreground-secondary">site</span></span>;
+  return <span className={`flex flex-col leading-[0.72] font-bold tracking-[-0.06em] text-foreground ${className}`} aria-label="ID site"><span className="text-[34px]">ID</span><span className="mt-1 text-[15px] font-semibold tracking-[-0.04em]">site</span></span>;
 }

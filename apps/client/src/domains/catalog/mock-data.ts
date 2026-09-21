@@ -3,14 +3,24 @@ import type { Category, Product } from "./types";
 
 const devices = "/images/showcase/id-site-devices.png";
 const consoleImage = "/images/products/gaming-console.png";
+const earbudsImage = "/images/products/wireless-earbuds.png";
+const chargingImage = "/images/products/charging-accessories.png";
+const iphoneImage = "/images/showcase/iphone-highlight.png";
+const macImage = "/images/showcase/mac-highlight.png";
+const ipadImage = "/images/showcase/ipad-highlight.png";
+const iphone16ProImage = "/images/products/iphone/iphone-16-pro.jpg";
+const macbookAirM4Image = "/images/products/mac/macbook-air-m4.jpg";
+const ipadAirM3Image = "/images/products/ipad/ipad-air-m3.jpg";
+const appleWatchSeries10Image = "/images/products/apple-watch/apple-watch-series-10.jpg";
+const airpodsPro2Image = "/images/products/airpods/airpods-pro-2-usb-c.jpg";
 const date = "2026-09-01T10:00:00Z";
 
 export const categories: Category[] = [
-  ["c1", "iphone", "iPhone", "مدل‌های آیفون", devices, 12],
-  ["c2", "mac", "Mac", "مک‌بوک و مک", devices, 8],
-  ["c3", "ipad", "iPad", "آیپد برای کار و خلاقیت", devices, 7],
-  ["c4", "apple-watch", "Apple Watch", "ساعت‌های اپل", devices, 5],
-  ["c5", "airpods", "AirPods", "ایرپاد و صوت شخصی", devices, 6],
+  ["c1", "iphone", "iPhone", "مدل‌های آیفون", iphone16ProImage, 12],
+  ["c2", "mac", "Mac", "مک‌بوک و مک", macbookAirM4Image, 8],
+  ["c3", "ipad", "iPad", "آیپد برای کار و خلاقیت", ipadAirM3Image, 7],
+  ["c4", "apple-watch", "Apple Watch", "ساعت‌های اپل", appleWatchSeries10Image, 5],
+  ["c5", "airpods", "AirPods", "ایرپاد و صوت شخصی", airpodsPro2Image, 6],
   ["c6", "playstation", "PlayStation", "فقط PS4 و PS5", consoleImage, 6],
   ["c7", "apple-accessories", "لوازم جانبی اپل", "لوازم سازگار با محصولات اپل", devices, 10],
 ].map(([id, slug, name, description, image, productCount], index) => ({ id, slug, name, description, image, productCount, parentId: null, status: "active" as const, order: index + 1 })) as Category[];
@@ -21,14 +31,16 @@ const product = (id: string, slug: string, title: string, titleLatin: string, br
 });
 
 export const products: Product[] = [
-  product("p1", "iphone-pro-demo", "iPhone Pro", "iPhone Pro", "Apple", "iPhone", "c1", 0, devices, { isFeatured: true, isNew: true, badges: [{ type: "new" }] }),
-  product("p2", "macbook-air-demo", "MacBook Air", "MacBook Air", "Apple", "Mac", "c2", 0, devices, { isFeatured: true, badges: [{ type: "featured" }] }),
-  product("p3", "ipad-air-demo", "iPad Air", "iPad Air", "Apple", "iPad", "c3", 0, devices, { isFeatured: true, isNew: true, badges: [{ type: "new" }] }),
-  product("p4", "apple-watch-demo", "Apple Watch", "Apple Watch", "Apple", "Apple Watch", "c4", 0, devices, { isFeatured: true }),
-  product("p5", "airpods-pro-demo", "AirPods Pro", "AirPods Pro", "Apple", "AirPods", "c5", 0, devices, { isNew: true }),
+  product("p1", "iphone-pro-demo", "iPhone 16 Pro", "iPhone 16 Pro", "Apple", "iPhone", "c1", 0, iphone16ProImage, { isFeatured: true, isNew: true, badges: [{ type: "new" }] }),
+  product("p2", "macbook-air-demo", "MacBook Air (M4)", "MacBook Air (M4)", "Apple", "Mac", "c2", 0, macbookAirM4Image, { isFeatured: true, badges: [{ type: "featured" }] }),
+  product("p3", "ipad-air-demo", "iPad Air (M3)", "iPad Air (M3)", "Apple", "iPad", "c3", 0, ipadAirM3Image, { isFeatured: true, isNew: true, badges: [{ type: "new" }] }),
+  product("p4", "apple-watch-demo", "Apple Watch Series 10", "Apple Watch Series 10", "Apple", "Apple Watch", "c4", 0, appleWatchSeries10Image, { isFeatured: true }),
+  product("p5", "airpods-pro-demo", "AirPods Pro (2nd generation)", "AirPods Pro (2nd generation)", "Apple", "AirPods", "c5", 0, airpodsPro2Image, { isFeatured: true, isNew: true }),
   product("p6", "playstation-5-demo", "PlayStation 5", "PlayStation 5", "PlayStation", "PlayStation", "c6", 0, consoleImage, { isFeatured: true, isNew: true, badges: [{ type: "featured" }] }),
   product("p7", "playstation-4-demo", "PlayStation 4", "PlayStation 4", "PlayStation", "PlayStation", "c6", 0, consoleImage, { isFeatured: true }),
-  product("p8", "apple-usb-c-accessory-demo", "لوازم جانبی USB-C", "USB-C Accessories", "ID site", "لوازم جانبی اپل", "c7", 0, devices, { isFeatured: true, badges: [{ type: "limited" }] }),
+  product("p8", "apple-usb-c-accessory-demo", "لوازم جانبی USB-C", "USB-C Accessories", "ID site", "لوازم جانبی اپل", "c7", 0, chargingImage, { isFeatured: true, badges: [{ type: "limited" }] }),
+  product("p9", "magsafe-charger-demo", "شارژر مغناطیسی", "Magnetic Charger", "ID site", "لوازم جانبی اپل", "c7", 0, chargingImage, { isFeatured: true }),
+  product("p10", "iphone-case-demo", "قاب شفاف گوشی", "Clear Phone Case", "ID site", "لوازم جانبی اپل", "c7", 0, devices, { isFeatured: true }),
 ];
 
 export const featuredProducts = products.filter((p) => p.isFeatured);
